@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.delphix.dct"},{"l":"com.delphix.dct.api"},{"l":"com.delphix.dct.auth"},{"l":"com.delphix.dct.models"}]

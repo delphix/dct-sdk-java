@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003" tests="38" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ankit.patil/projects/dct-sdk-java/target/test-classes:/Users/ankit.patil/projects/dct-sdk-java/target/classes:/Users/ankit.patil/.m2/repository/io/swagger/swagger-annotations/1.6.2/swagger-annotations-1.6.2.jar:/Users/ankit.patil/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/ankit.patil/.m2/repository/com/squareup/okhttp3/okhttp/4.9.1/okhttp-4.9.1.jar:/Users/ankit.patil/.m2/repository/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/ankit.patil/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.9.1/logging-interceptor-4.9.1.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.4.10/kotlin-stdlib-jdk8-1.4.10.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.4.10/kotlin-stdlib-jdk7-1.4.10.jar:/Users/ankit.patil/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/Users/ankit.patil/.m2/repository/io/gsonfire/gson-fire/1.8.5/gson-fire-1.8.5.jar:/Users/ankit.patil/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/ankit.patil/.m2/repository/org/threeten/threetenbp/1.5.0/threetenbp-1.5.0.jar:/Users/ankit.patil/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/Users/ankit.patil/.m2/repository/org/openapitools/jackson-databind-nullable/0.2.1/jackson-databind-nullable-0.2.1.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar:/Users/ankit.patil/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/Users/ankit.patil/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/ankit.patil/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/Users/ankit.patil/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/Users/ankit.patil/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/Users/ankit.patil/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ankit.patil/projects/dct-sdk-java/target/surefire/surefirebooter14362971502228980925.jar /Users/ankit.patil/projects/dct-sdk-java/target/surefire 2024-03-19T19-02-46_691-jvmRun1 surefire4653294144034306173tmp surefire_02293441590353636235tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ankit.patil/projects/dct-sdk-java/target/test-classes:/Users/ankit.patil/projects/dct-sdk-java/target/classes:/Users/ankit.patil/.m2/repository/io/swagger/swagger-annotations/1.6.2/swagger-annotations-1.6.2.jar:/Users/ankit.patil/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/ankit.patil/.m2/repository/com/squareup/okhttp3/okhttp/4.9.1/okhttp-4.9.1.jar:/Users/ankit.patil/.m2/repository/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/ankit.patil/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.9.1/logging-interceptor-4.9.1.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.4.10/kotlin-stdlib-jdk8-1.4.10.jar:/Users/ankit.patil/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.4.10/kotlin-stdlib-jdk7-1.4.10.jar:/Users/ankit.patil/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/Users/ankit.patil/.m2/repository/io/gsonfire/gson-fire/1.8.5/gson-fire-1.8.5.jar:/Users/ankit.patil/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/ankit.patil/.m2/repository/org/threeten/threetenbp/1.5.0/threetenbp-1.5.0.jar:/Users/ankit.patil/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/Users/ankit.patil/.m2/repository/org/openapitools/jackson-databind-nullable/0.2.1/jackson-databind-nullable-0.2.1.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/ankit.patil/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar:/Users/ankit.patil/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/Users/ankit.patil/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/ankit.patil/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/Users/ankit.patil/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/Users/ankit.patil/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/Users/ankit.patil/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ankit.patil"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/ankit.patil/projects/dct-sdk-java"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/ankit.patil/projects/dct-sdk-java/target/surefire/surefirebooter14362971502228980925.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="11.0.19+9-LTS-224"/>
+    <property name="user.name" value="ankit.patil"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="localRepository" value="/Users/ankit.patil/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/hf/09p2n1qx1vxftw6fq4wkvy600000gp/T/"/>
+    <property name="altDeploymentRepository" value="ossrh::default::https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"/>
+    <property name="java.version" value="11.0.19"/>
+    <property name="user.dir" value="/Users/ankit.patil/projects/dct-sdk-java"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/ankit.patil/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.19+9-LTS-224"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="loggerPath" value="conf/log4j.properties"/>
+  </properties>
+  <testcase name="backupHostTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="opsPreSyncTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="aseBackupFilesTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="makeCurrentAccountOwnerTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="dbAzureVaultUsernameKeyTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="validatedSyncModeTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="dbCyberarkVaultQueryStringTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="backupServerNameTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="logSyncEnabledTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="externalFilePathTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="loadBackupPathTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="testASEDSourceLinkSourceParameters" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="groupIdTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="preValidatedSyncTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="dbUserTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="dbHashicorpVaultSecretPathTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="dumpHistoryFileEnabledTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.003"/>
+  <testcase name="descriptionTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.002"/>
+  <testcase name="tagsTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.002"/>
+  <testcase name="sourceIdTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.002"/>
+  <testcase name="postValidatedSyncTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.002"/>
+  <testcase name="backupHostUserTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="stagingHostUserTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbHashicorpVaultSecretKeyTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="nameTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbVaultTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="sourceHostUserTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbPasswordTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="mountBaseTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dumpCredentialsTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="syncStrategyTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dropAndRecreateDevicesTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbAzureVaultNameTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbHashicorpVaultUsernameKeyTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbAzureVaultSecretKeyTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="dbHashicorpVaultEngineTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="stagingRepositoryTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+  <testcase name="opsPostSyncTest" classname="com.delphix.dct.models.ASEDSourceLinkSourceParametersTest" time="0.001"/>
+</testsuite>
