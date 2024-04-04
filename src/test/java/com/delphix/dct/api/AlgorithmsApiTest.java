@@ -22,7 +22,6 @@ import com.delphix.dct.models.ListAlgorithmsResponse;
 import com.delphix.dct.models.SearchAlgorithmRevisionsResponse;
 import com.delphix.dct.models.SearchAlgorithmsResponse;
 import com.delphix.dct.models.SearchBody;
-import com.delphix.dct.models.SetAlgorithmPrimaryRevisionResponse;
 import com.delphix.dct.models.TagsRequest;
 import com.delphix.dct.models.TagsResponse;
 import com.delphix.dct.models.UpdateAlgorithmRevisionParameters;
@@ -204,19 +203,6 @@ public class AlgorithmsApiTest {
         String sort = null;
         SearchBody searchBody = null;
         SearchAlgorithmsResponse response = api.searchAlgorithms(limit, cursor, sort, searchBody);
-        // TODO: test validations
-    }
-
-    /**
-     * Set an algorithm revision to be the primary revision for the algorithm.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void setAlgorithmPrimaryRevisionTest() throws ApiException {
-        String algorithmId = null;
-        String revisionId = null;
-        SetAlgorithmPrimaryRevisionResponse response = api.setAlgorithmPrimaryRevision(algorithmId, revisionId);
         // TODO: test validations
     }
 

@@ -13,7 +13,6 @@
 
 package com.delphix.dct.models;
 
-import com.delphix.dct.models.Job;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,33 +24,33 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for CreateAlgorithmResponse
+ * Model tests for UpdateAlgorithmRevisionParameters
  */
-public class CreateAlgorithmResponseTest {
-    private final CreateAlgorithmResponse model = new CreateAlgorithmResponse();
+public class UpdateAlgorithmRevisionParametersTest {
+    private final UpdateAlgorithmRevisionParameters model = new UpdateAlgorithmRevisionParameters();
 
     /**
-     * Model tests for CreateAlgorithmResponse
+     * Model tests for UpdateAlgorithmRevisionParameters
      */
     @Test
-    public void testCreateAlgorithmResponse() {
-        // TODO: test CreateAlgorithmResponse
+    public void testUpdateAlgorithmRevisionParameters() {
+        // TODO: test UpdateAlgorithmRevisionParameters
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'name'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'job'
+     * Test the property 'note'
      */
     @Test
-    public void jobTest() {
-        // TODO: test job
+    public void noteTest() {
+        // TODO: test note
     }
 
 }

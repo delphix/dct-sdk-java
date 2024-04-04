@@ -49,7 +49,7 @@ import com.delphix.dct.JSON;
 /**
  * A masking job&#39;s source engine.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T12:02:33.321319+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
 public class MaskingJobSourceEngine {
   public static final String SERIALIZED_NAME_MASKING_JOB_ID = "masking_job_id";
   @SerializedName(SERIALIZED_NAME_MASKING_JOB_ID)

@@ -51,7 +51,7 @@ import com.delphix.dct.JSON;
 /**
  * The updatable properties of a table or file which is part of a hyperscale dataset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T12:02:33.321319+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
 public class HyperscaleDatasetTableOrFileUpdateParameters {
   public static final String SERIALIZED_NAME_FILTER_KEY = "filter_key";
   @SerializedName(SERIALIZED_NAME_FILTER_KEY)

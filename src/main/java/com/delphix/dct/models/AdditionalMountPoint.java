@@ -49,7 +49,7 @@ import com.delphix.dct.JSON;
 /**
  * Specifies an additional location on which to mount a subdirectory of an AppData container.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T12:02:33.321319+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
 public class AdditionalMountPoint {
   public static final String SERIALIZED_NAME_SHARED_PATH = "shared_path";
   @SerializedName(SERIALIZED_NAME_SHARED_PATH)
