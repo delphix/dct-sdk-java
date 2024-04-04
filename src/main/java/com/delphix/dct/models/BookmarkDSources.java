@@ -49,7 +49,7 @@ import com.delphix.dct.JSON;
 /**
  * dSource id and name associated with bookmark.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T12:02:33.321319+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
 public class BookmarkDSources {
   public static final String SERIALIZED_NAME_DSOURCE_ID = "dsource_id";
   @SerializedName(SERIALIZED_NAME_DSOURCE_ID)

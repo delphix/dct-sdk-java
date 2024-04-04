@@ -5419,7 +5419,7 @@ paths:
           type: string
         style: form
       - description: The desired point in time.
-        example: 2021-05-01T08:51:34.148000+00:00
+        example: 2021-05-01T08:51:34.148Z
         explode: true
         in: query
         name: timestamp
@@ -8852,37 +8852,6 @@ paths:
       tags:
       - Replication
       x-accepts: application/json
-    patch:
-      operationId: update_replication_profile
-      parameters:
-      - description: The ID of the ReplicationProfile.
-        explode: false
-        in: path
-        name: replicationProfileId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdateReplicationProfileParameters'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReplicationProfileUpdateJobResponse'
-          description: OK
-      summary: Update a ReplicationProfile.
-      tags:
-      - Replication
-      x-internal: true
-      x-content-type: application/json
-      x-accepts: application/json
   /replication-profiles/{replicationProfileId}/tags:
     get:
       operationId: get_replication_profile_tags
@@ -11167,60 +11136,6 @@ paths:
       - Management
       x-content-type: application/json
       x-accepts: application/json
-  /management/engines/{engineId}/auto-tagging:
-    get:
-      operationId: get_engine_auto_tagging_config
-      parameters:
-      - description: The ID of the registered engine.
-        explode: false
-        in: path
-        name: engineId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AutoTaggingConfig'
-          description: OK
-      summary: Returns the engine's auto tagging configuration.
-      tags:
-      - Management
-      x-accepts: application/json
-    patch:
-      operationId: update_engine_auto_tagging_config
-      parameters:
-      - description: The ID of the registered engine.
-        explode: false
-        in: path
-        name: engineId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AutoTaggingConfig'
-        description: The auto tagging configuration.
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UpdateEngineAutoTaggingConfigResponse'
-          description: OK
-      summary: Update the engine's auto tagging configuration.
-      tags:
-      - Management
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
   /management/engines/search:
     post:
       operationId: search_engines
@@ -12946,7 +12861,7 @@ paths:
       operationId: get_api_usage_report
       parameters:
       - description: Report start date/time. Defaults to first API request.
-        example: 2022-05-29T15:00:00-04:00
+        example: 2022-05-29T19:00:00Z
         explode: true
         in: query
         name: start_date
@@ -12956,7 +12871,7 @@ paths:
           type: string
         style: form
       - description: Report end date/time. Defaults to current time.
-        example: 2022-06-07T15:10:00-04:00
+        example: 2022-06-07T19:10:00Z
         explode: true
         in: query
         name: end_date
@@ -16212,41 +16127,6 @@ paths:
       tags:
       - Executions
       x-accepts: application/json
-  /enable-scale-testing:
-    post:
-      operationId: enable_scale_testing
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EnableScaleTestingRequest'
-      responses:
-        "200":
-          description: OK
-      summary: This is used for performance testing to enable engine and object duplication.
-      tags:
-      - Test
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
-  /masking-file-uploads:
-    post:
-      operationId: upload_masking_file
-      requestBody:
-        $ref: '#/components/requestBodies/UploadMaskingFile'
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MaskingFileUploadResponse'
-          description: File has been uploaded.
-      summary: Upload a file for masking.
-      tags:
-      - MaskingFiles
-      x-content-type: multipart/form-data
-      x-accepts: application/json
-    x-internal: true
   /masking-jobs:
     get:
       operationId: get_masking_jobs
@@ -17013,30 +16893,6 @@ paths:
       x-content-type: application/json
       x-accepts: application/json
   /algorithms/{algorithmId}:
-    delete:
-      operationId: delete_algorithm
-      parameters:
-      - description: The ID of the Algorithm.
-        explode: false
-        in: path
-        name: algorithmId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeleteAlgorithmResponse'
-          description: Algorithm delete initiated.
-      summary: Delete an algorithm.
-      tags:
-      - Algorithms
-      x-internal: true
-      x-accepts: application/json
     get:
       operationId: get_algorithm_by_id
       parameters:
@@ -17125,23 +16981,6 @@ paths:
       summary: Retrieve the list of algorithms.
       tags:
       - Algorithms
-      x-accepts: application/json
-    post:
-      operationId: create_algorithm
-      requestBody:
-        $ref: '#/components/requestBodies/CreateAlgorithm'
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateAlgorithmResponse'
-          description: Algorithm creation initiated
-      summary: Create a new algorithm.
-      tags:
-      - Algorithms
-      x-internal: true
-      x-content-type: application/json
       x-accepts: application/json
   /algorithms/{algorithmId}/tags:
     get:
@@ -17300,33 +17139,6 @@ paths:
       tags:
       - Algorithms
       x-accepts: application/json
-    post:
-      operationId: create_algorithm_revision
-      parameters:
-      - description: The ID of the Algorithm.
-        explode: false
-        in: path
-        name: algorithmId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      requestBody:
-        $ref: '#/components/requestBodies/CreateAlgorithmRevision'
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateAlgorithmRevisionResponse'
-          description: Algorithm creation revision initiated
-      summary: Create a new algorithm revision.
-      tags:
-      - Algorithms
-      x-internal: true
-      x-content-type: application/json
-      x-accepts: application/json
   /algorithms/{algorithmId}/revisions/search:
     post:
       operationId: search_algorithm_revisions
@@ -17442,39 +17254,6 @@ paths:
       x-content-type: application/json
       x-accepts: application/json
   /algorithms/{algorithmId}/revisions/{revisionId}:
-    delete:
-      operationId: delete_algorithm_revision
-      parameters:
-      - description: The ID of the Algorithm.
-        explode: false
-        in: path
-        name: algorithmId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      - description: The ID of the Algorithm revision.
-        explode: false
-        in: path
-        name: revisionId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeleteAlgorithmRevisionResponse'
-          description: Algorithm revision delete initiated.
-      summary: Delete an algorithm revision.
-      tags:
-      - Algorithms
-      x-internal: true
-      x-accepts: application/json
     get:
       operationId: get_algorithm_revision_by_id
       parameters:
@@ -17547,40 +17326,6 @@ paths:
       - Algorithms
       x-content-type: application/json
       x-accepts: application/json
-  /algorithms/{algorithmId}/revisions/{revisionId}/make-primary:
-    post:
-      operationId: set_algorithm_primary_revision
-      parameters:
-      - description: The ID of the Algorithm.
-        explode: false
-        in: path
-        name: algorithmId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      - description: The ID of the Algorithm revision.
-        explode: false
-        in: path
-        name: revisionId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SetAlgorithmPrimaryRevisionResponse'
-          description: Primary revision modification initiated.
-      summary: Set an algorithm revision to be the primary revision for the algorithm.
-      tags:
-      - Algorithms
-      x-accepts: application/json
-    x-internal: true
   /algorithms/{algorithmId}/revisions/{revisionId}/tags:
     get:
       operationId: get_algorithm_revision_tags
@@ -17949,370 +17694,6 @@ paths:
       tags:
       - MaskingEnvironments
       x-accepts: application/json
-  /enabled-features-flag:
-    get:
-      operationId: get_enabled_features_flag
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                description: List of enabled features.
-                example:
-                - ENGINE_DEEP_LINK
-                - DSOURCE_LINKING
-                items:
-                  type: string
-                type: array
-          description: OK
-      summary: Get enabled feature flags.
-      tags:
-      - FeatureFlag
-      x-accepts: application/json
-    x-internal: true
-  /masking-plugins:
-    get:
-      operationId: get_masking_plugins
-      parameters:
-      - description: Maximum number of objects to return per query. The value must
-          be between 1 and 1000. Default is 100.
-        example: 50
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          default: 100
-          maximum: 1000
-          minimum: 1
-          type: integer
-        style: form
-      - description: Cursor to fetch the next or previous page of results. The value
-          of this property must be extracted from the 'prev_cursor' or 'next_cursor'
-          property of a PaginatedResponseMetadata which is contained in the response
-          of list and search API endpoints.
-        explode: true
-        in: query
-        name: cursor
-        required: false
-        schema:
-          maxLength: 4096
-          minLength: 1
-          type: string
-        style: form
-      - description: The field to sort results by. A property name with a prepended
-          '-' signifies a descending order.
-        example: id
-        explode: true
-        in: query
-        name: sort
-        required: false
-        schema:
-          enum:
-          - id
-          - -id
-          - name
-          - -name
-          - plugin_type
-          - -plugin_type
-          - description
-          - -description
-          - install_date
-          - -install_date
-          - built_in
-          - -built_in
-          - sdk_version
-          - -sdk_version
-          - version
-          - -version
-          - author
-          - -author
-          example: name
-          nullable: true
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListMaskingPluginsResponse'
-          description: OK
-      summary: Retrieve the list of masking plugins.
-      tags:
-      - MaskingPlugins
-      x-accepts: application/json
-    post:
-      operationId: install_masking_plugin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InstallMaskingPluginParameters'
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InstallMaskingPluginResponse'
-          description: Plugin installation initiated
-      summary: Install a custom masking plugin.
-      tags:
-      - MaskingPlugins
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
-  /masking-plugins/{maskingPluginId}:
-    delete:
-      operationId: delete_masking_plugin
-      parameters:
-      - description: The ID of the masking plugin.
-        explode: false
-        in: path
-        name: maskingPluginId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeleteMaskingPluginResponse'
-          description: Masking plugin delete initiated.
-      summary: Delete a custom masking plugin.
-      tags:
-      - MaskingPlugins
-      x-accepts: application/json
-    get:
-      operationId: get_masking_plugin_by_id
-      parameters:
-      - description: The ID of the masking plugin.
-        explode: false
-        in: path
-        name: maskingPluginId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MaskingPlugin'
-          description: OK
-      summary: Get a masking plugin by ID or name.
-      tags:
-      - MaskingPlugins
-      x-accepts: application/json
-    x-internal: true
-  /masking-plugins/{maskingPluginId}/tags:
-    get:
-      operationId: get_masking_plugin_tags
-      parameters:
-      - description: The ID of the masking plugin.
-        explode: false
-        in: path
-        name: maskingPluginId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TagsResponse'
-          description: Ok
-      summary: Get tags for a masking plugin.
-      tags:
-      - MaskingPlugins
-      x-accepts: application/json
-    post:
-      operationId: create_masking_plugin_tags
-      parameters:
-      - description: The ID of the masking plugin.
-        explode: false
-        in: path
-        name: maskingPluginId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TagsRequest'
-        description: Tags information for masking plugin.
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TagsResponse'
-          description: Masking plugin tags created
-      summary: Create tags for a masking plugin.
-      tags:
-      - MaskingPlugins
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
-  /masking-plugins/{maskingPluginId}/tags/delete:
-    post:
-      operationId: delete_masking_plugin_tags
-      parameters:
-      - description: The ID of the masking plugin.
-        explode: false
-        in: path
-        name: maskingPluginId
-        required: true
-        schema:
-          minLength: 1
-          type: string
-        style: simple
-      requestBody:
-        $ref: '#/components/requestBodies/DeleteTags'
-      responses:
-        "204":
-          description: No Content
-      summary: Delete tags for a masking plugin.
-      tags:
-      - MaskingPlugins
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
-  /masking-plugins/search:
-    post:
-      operationId: search_masking_plugins
-      parameters:
-      - description: Maximum number of objects to return per query. The value must
-          be between 1 and 1000. Default is 100.
-        example: 50
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          default: 100
-          maximum: 1000
-          minimum: 1
-          type: integer
-        style: form
-      - description: Cursor to fetch the next or previous page of results. The value
-          of this property must be extracted from the 'prev_cursor' or 'next_cursor'
-          property of a PaginatedResponseMetadata which is contained in the response
-          of list and search API endpoints.
-        explode: true
-        in: query
-        name: cursor
-        required: false
-        schema:
-          maxLength: 4096
-          minLength: 1
-          type: string
-        style: form
-      - description: The field to sort results by. A property name with a prepended
-          '-' signifies a descending order.
-        example: id
-        explode: true
-        in: query
-        name: sort
-        required: false
-        schema:
-          enum:
-          - id
-          - -id
-          - name
-          - -name
-          - plugin_type
-          - -plugin_type
-          - description
-          - -description
-          - install_date
-          - -install_date
-          - built_in
-          - -built_in
-          - sdk_version
-          - -sdk_version
-          - version
-          - -version
-          - author
-          - -author
-          example: name
-          nullable: true
-          type: string
-        style: form
-      requestBody:
-        $ref: '#/components/requestBodies/SearchBody'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SearchMaskingPluginsResponse'
-          description: OK
-      summary: Search for masking plugins.
-      tags:
-      - MaskingPlugins
-      x-filterable:
-        fields:
-          id:
-            type: string
-          name:
-            type: string
-          plugin_type:
-            type: string
-          description:
-            type: string
-          install_date:
-            type: string
-          built_in:
-            type: boolean
-          sdk_version:
-            type: string
-          version:
-            type: string
-          author:
-            type: string
-          frameworks:
-            type: "array[object]"
-            fields:
-              id:
-                type: string
-              name:
-                type: string
-              description:
-                type: string
-              masking_type:
-                type: string
-                enum:
-                - STRING
-                - DATE
-                - LOCAL_DATE_TIME
-                - BIG_DECIMAL
-                - BYTE_BUFFER
-                - GENERIC_DATA_ROW
-                - ADVANCED_OBJECT
-          tags:
-            type: "array[object]"
-            fields:
-              key:
-                type: string
-              value:
-                type: string
-      x-content-type: application/json
-      x-accepts: application/json
-    x-internal: true
 components:
   parameters:
     EnginePerformanceAnalyticReportSortParam:
@@ -18940,7 +18321,7 @@ components:
       style: form
     endDate:
       description: Report end date/time. Defaults to current time.
-      example: 2022-06-07T15:10:00-04:00
+      example: 2022-06-07T19:10:00Z
       explode: true
       in: query
       name: end_date
@@ -20197,7 +19578,7 @@ components:
       style: form
     startDate:
       description: Report start date/time. Defaults to first API request.
-      example: 2022-05-29T15:00:00-04:00
+      example: 2022-05-29T19:00:00Z
       explode: true
       in: query
       name: start_date
@@ -20784,22 +20165,6 @@ components:
             $ref: '#/components/schemas/AppDataDSourceLinkSourceParameters'
       description: The parameters to link an AppData dSource.
       required: true
-    CreateAlgorithm:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AlgorithmCreateParameters'
-      description: The parameters to create an algorithm.
-      required: true
-      x-internal: true
-    CreateAlgorithmRevision:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AlgorithmRevisionCreateParameters'
-      description: The parameters to create an algorithm revision.
-      required: true
-      x-internal: true
     CreateBookmark:
       content:
         application/json:
@@ -22384,13 +21749,6 @@ components:
           schema:
             $ref: '#/components/schemas/PostgresSourceUpdateParameters'
       description: The parameters to update a PostgreSQL source
-    UploadMaskingFile:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/MaskingFileUploadParameters'
-      description: The parameters to upload a file for masking.
-      x-internal: true
   schemas:
     APIClassificationConfig:
       description: Api Classification Config.
@@ -23629,39 +22987,6 @@ components:
       - name
       - plugin_name
       type: object
-    AlgorithmCreateParameters:
-      description: Parameters to create a masking algorithm.
-      properties:
-        name:
-          description: The name of this Algorithm.
-          example: Address
-          type: string
-        description:
-          description: A description of this algorithm.
-          type: string
-        plugin_id:
-          description: The id of the plugin which this algorithm will use.
-          example: dc91e41c-aade-4404-9084-179cb90d07c6
-          type: string
-        config:
-          additionalProperties: true
-          description: The configuration of this algorithm.
-          type: object
-        framework_name:
-          description: Name for the framework of this algorithm.
-          type: string
-        tags:
-          description: The tags of this algorithm.
-          items:
-            $ref: '#/components/schemas/Tag'
-          type: array
-      required:
-      - config
-      - framework_name
-      - name
-      - plugin_id
-      type: object
-      x-internal: true
     AlgorithmRevision:
       description: A masking algorithm revision.
       example:
@@ -23748,35 +23073,6 @@ components:
       - name
       - plugin_id
       type: object
-    AlgorithmRevisionCreateParameters:
-      description: Parameters to create a masking algorithm revision.
-      properties:
-        name:
-          description: The name of this Algorithm.
-          example: Address
-          type: string
-        note:
-          description: A note of this algorithm.
-          type: string
-        plugin_id:
-          description: The id of the plugin which this algorithm will use.
-          example: dc91e41c-aade-4404-9084-179cb90d07c6
-          type: string
-        config:
-          additionalProperties: true
-          description: The configuration of this algorithm revision.
-          type: object
-        tags:
-          description: The tags of this algorithm revision.
-          items:
-            $ref: '#/components/schemas/Tag'
-          type: array
-      required:
-      - config
-      - name
-      - plugin_id
-      type: object
-      x-internal: true
     AlgorithmRevisionOriginEngine:
       description: A record of engine that an algorithm revision originates from.
       example:
@@ -24198,31 +23494,6 @@ components:
           format: int32
           type: integer
       type: object
-    AutoTaggingConfig:
-      description: Configuration settings for auto tagging.
-      example:
-        enable_masking_applications: true
-        enable_masking_environments: true
-        enable_virtualization_dataset_groups: true
-      properties:
-        enable_virtualization_dataset_groups:
-          description: "Include dataset group names as tags for dSources, VDBs, CDBs,\
-            \ and vCDBs."
-          example: true
-          type: boolean
-        enable_masking_environments:
-          description: "Include masking environment names as tags for masking Jobs,\
-            \ Connectors, and Rulesets."
-          example: true
-          type: boolean
-        enable_masking_applications:
-          description: "Include masking app names as tags for masking Jobs, Connectors,\
-            \ and Rulesets."
-          example: true
-          type: boolean
-      title: AutoTaggingConfig
-      type: object
-      x-internal: true
     BaseDSourceLinkSourceParameters:
       properties:
         name:
@@ -24770,7 +24041,7 @@ components:
         vdb_ids:
         - vdb-123
         - vdb-456
-        expiration: 2021-07-04
+        expiration: 2000-01-23
         bookmark_status: ACTIVE
         ss_bookmark_reference: ss_bookmark_reference
         id: bookmark-123
@@ -24833,7 +24104,6 @@ components:
           description: "The expiration for this bookmark. When unset, indicates the\
             \ bookmark is kept forever except for bookmarks of replicated datasets.\
             \ Expiration cannot be set for bookmarks of replicated datasets."
-          example: 2021-07-04
           format: date
           type: string
         status:
@@ -24918,7 +24188,7 @@ components:
         - key: key-2
           value: value-2
         make_current_account_owner: true
-        timestamp_in_database_timezone: 2021-08-14T14:55:20.507
+        timestamp_in_database_timezone: 2021-08-14T14:55:20.507Z
         inherit_parent_tags: false
         name: my-bookmark-123
         vdb_ids:
@@ -24928,7 +24198,7 @@ components:
         - timeflow-1
         - timeflow-2
         location: "112233"
-        expiration: 2021-07-04
+        expiration: 2000-01-23
         inherit_parent_vdb_tags: false
         retention: 365
         timestamp: 2021-05-01T08:51:34.148Z
@@ -24979,7 +24249,7 @@ components:
           description: "The point in time from which to execute the operation, expressed\
             \ as a date-time in the timezone of the source database. Mutually exclusive\
             \ with snapshot_ids, timestamp and location."
-          example: 2021-08-14T14:55:20.507
+          example: 2021-08-14T14:55:20.507Z
           pattern: "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.[0-9]{0,3})?"
           type: string
         location:
@@ -25000,7 +24270,6 @@ components:
         expiration:
           description: The expiration for this bookmark. Mutually exclusive with retention
             and retain_forever.
-          example: 2021-07-04
           format: date
           type: string
         retain_forever:
@@ -25922,7 +25191,7 @@ components:
         data_uuid: 1734315df891991101eb96963535afa0
         storage_size: 339292672
         plugin_version: "1.0"
-        creation_date: 2021-05-01T08:51:34.148000+00:00
+        creation_date: 2021-05-01T08:51:34.148Z
         group_name: DSources
         enabled: true
         engine_id: engine-123
@@ -26361,7 +25630,7 @@ components:
           description: "The point in time from which to execute the operation, expressed\
             \ as a date-time in the timezone of the source database. Mutually exclusive\
             \ with timestamp."
-          example: 2021-08-14T14:55:20.507
+          example: 2021-08-14T14:55:20.507Z
           pattern: "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.[0-9]{0,3})?"
           type: string
         timeflow_id:
@@ -26917,47 +26186,6 @@ components:
           description: Whether to attempt a startup of the source after the enable.
           type: boolean
       type: object
-    EnableScaleTestingRequest:
-      example:
-        masking_engines_list:
-        - masking_engines_list
-        - masking_engines_list
-        virt_engines_list:
-        - virt_engines_list
-        - virt_engines_list
-        engines_count: 0
-        masking_objects_count: 5
-        snapshots_count: 1
-        virt_objects_count: 6
-      properties:
-        engines_count:
-          description: no. of times same engine needs to be registered
-          type: integer
-        virt_engines_list:
-          description: list of virt engine hostnames to be registered engines_count
-            times
-          items:
-            type: string
-          type: array
-        masking_engines_list:
-          description: list of masking engine hostnames to be registered engines_count
-            times
-          items:
-            type: string
-          type: array
-        virt_objects_count:
-          description: "no. of times to duplicate sources, containers, and timeflows"
-          type: integer
-        snapshots_count:
-          description: no. of times to duplicate snapshots
-          type: integer
-        masking_objects_count:
-          description: "no. of times to duplicate jobs, rulesets, and connectors"
-          type: integer
-      required:
-      - engines_count
-      type: object
-      x-internal: true
     EnableVDBParameters:
       description: Parameters to enable a VDB.
       example:
@@ -28660,40 +27888,6 @@ components:
             \ connect descriptor"
           type: string
       type: object
-    Framework:
-      description: A masking algorithm framework.
-      example:
-        masking_type: STRING
-        name: Secure Lookup
-        description: Secure Lookup Framework
-        id: dc91e41c-aade-4404-9084-179cb90d07c6
-      properties:
-        id:
-          description: The masking framework entity ID.
-          example: dc91e41c-aade-4404-9084-179cb90d07c6
-          type: string
-        name:
-          description: The name of this framework.
-          example: Secure Lookup
-          type: string
-        description:
-          description: A description of this framework.
-          example: Secure Lookup Framework
-          nullable: true
-          type: string
-        masking_type:
-          description: The masking type of this framework.
-          enum:
-          - STRING
-          - DATE
-          - LOCAL_DATE_TIME
-          - BIG_DECIMAL
-          - BYTE_BUFFER
-          - GENERIC_DATA_ROW
-          - ADVANCED_OBJECT
-          type: string
-      type: object
-      x-internal: true
     GlobalProperties:
       description: Global properties response.
       example:
@@ -30211,29 +29405,6 @@ components:
           items:
             $ref: '#/components/schemas/HyperscaleTaskError'
           type: array
-    InstallMaskingPluginParameters:
-      description: Parameters to install a custom masking plugin.
-      example:
-        plugin_file_reference: delphix-file://upload/f_0ea61f94f53c4441890e8fac88805048/plugin.jar
-        tags:
-        - value: value-1
-          key: key-1
-        - value: value-1
-          key: key-1
-      properties:
-        plugin_file_reference:
-          description: File reference for the plugin JAR.
-          example: delphix-file://upload/f_0ea61f94f53c4441890e8fac88805048/plugin.jar
-          type: string
-        tags:
-          description: The tags of this plugin.
-          items:
-            $ref: '#/components/schemas/Tag'
-          type: array
-      required:
-      - plugin_file_reference
-      type: object
-      x-internal: true
     Job:
       description: An asynchronous task.
       example:
@@ -30710,7 +29881,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -30732,7 +29903,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
         - creation_time: 2023-02-02T19:30:00.589Z
           temporary: false
           ase_db_encryption_key: keyname
@@ -30749,7 +29920,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -30771,7 +29942,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
       properties:
         items:
           items:
@@ -31601,36 +30772,6 @@ components:
           format: int64
           type: integer
       type: object
-    MaskingFileUpload:
-      description: An uploaded file.
-      example:
-        filename: filename
-        file_reference_id: file_reference_id
-        file_size: 0
-      properties:
-        filename:
-          description: Name of this file.
-          type: string
-        file_reference_id:
-          description: An reference to this file.
-          type: string
-        file_size:
-          description: Size of this file in bytes.
-          format: int64
-          type: integer
-      type: object
-      x-internal: true
-    MaskingFileUploadParameters:
-      description: Parameters to upload a file for masking.
-      properties:
-        file:
-          description: The file to upload.
-          format: binary
-          type: string
-      required:
-      - file
-      type: object
-      x-internal: true
     MaskingJob:
       description: A masking job.
       example:
@@ -31874,83 +31015,6 @@ components:
           example: engine-123
           type: string
       type: object
-    MaskingPlugin:
-      description: A masking plugin.
-      example:
-        frameworks:
-        - masking_type: STRING
-          name: Secure Lookup
-          description: Secure Lookup Framework
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-        - masking_type: STRING
-          name: Secure Lookup
-          description: Secure Lookup Framework
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-        author: Delphix
-        built_in: true
-        name: dlpx-core
-        plugin_type: EXTENDED_ALGORITHM
-        sdk_version: 1.20.0
-        description: Delphix Core Masking Algorithm Plugin
-        id: dc91e41c-aade-4404-9084-179cb90d07c6
-        install_date: 2000-01-23T04:56:07.000+00:00
-        version: 1.20.0
-        tags:
-        - value: value-1
-          key: key-1
-        - value: value-1
-          key: key-1
-      properties:
-        id:
-          description: The masking plugin entity ID.
-          example: dc91e41c-aade-4404-9084-179cb90d07c6
-          type: string
-        name:
-          description: The name of this plugin.
-          example: dlpx-core
-          type: string
-        plugin_type:
-          description: The plugin type.
-          enum:
-          - EXTENDED_ALGORITHM
-          type: string
-        description:
-          description: A description of this plugin.
-          example: Delphix Core Masking Algorithm Plugin
-          nullable: true
-          type: string
-        install_date:
-          description: The date and time when this plugin is installed.
-          format: date-time
-          type: string
-        built_in:
-          description: Whether this plugin is a built-in plugin.
-          type: boolean
-        sdk_version:
-          description: The masking SDK version that this plugin is built from.
-          example: 1.20.0
-          type: string
-        version:
-          description: The version of this plugin.
-          example: 1.20.0
-          type: string
-        author:
-          description: The author of this plugin.
-          example: Delphix
-          type: string
-        frameworks:
-          description: The list of frameworks for this plugin.
-          items:
-            $ref: '#/components/schemas/Framework'
-          nullable: true
-          type: array
-        tags:
-          description: The tags of this plugin.
-          items:
-            $ref: '#/components/schemas/Tag'
-          type: array
-      type: object
-      x-internal: true
     MaskingRuleset:
       description: A masking ruleset.
       example:
@@ -33758,7 +32822,7 @@ components:
           type: string
         installed_on:
           description: The UTC time when the version was installed (ISO 8601 format)
-          example: 2024-03-05T17:17:39.512532Z
+          example: 2024-03-05T17:17:39.513Z
           type: string
       required:
       - installed_on
@@ -34077,7 +33141,7 @@ components:
         source_data_id: source-123
     ProvisionVDBByTimestampDefaultsRequest:
       example:
-        timestamp_in_database_timezone: 2021-08-14T14:55:20.507
+        timestamp_in_database_timezone: 2021-08-14T14:55:20.507Z
         engine_id: engine-123
         source_data_id: source-123
         timeflow_id: timeflow-123
@@ -34094,7 +33158,7 @@ components:
           description: "The point in time from which to execute the operation, expressed\
             \ as a date-time in the timezone of the source database. Mutually exclusive\
             \ with timestamp."
-          example: 2021-08-14T14:55:20.507
+          example: 2021-08-14T14:55:20.507Z
           pattern: "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.[0-9]{0,3})?"
           type: string
         engine_id:
@@ -34151,7 +33215,7 @@ components:
         type: object
       example:
         make_current_account_owner: true
-        timestamp_in_database_timezone: 2021-08-14T14:55:20.507
+        timestamp_in_database_timezone: 2021-08-14T14:55:20.507Z
         engine_id: engine-123
         source_data_id: source-123
         timeflow_id: timeflow-123
@@ -34409,7 +33473,7 @@ components:
             type: string
         type: object
       example:
-        timestamp_in_database_timezone: 2021-08-14T14:55:20.507
+        timestamp_in_database_timezone: 2021-08-14T14:55:20.507Z
         dataset_id: 123-CONTAINER_1
         timeflow_id: timeflow_123
         timestamp: 2021-05-01T08:51:34.148Z
@@ -35328,7 +34392,7 @@ components:
       - $ref: '#/components/schemas/DataPointByTimestampParameters'
       deprecated: true
       example:
-        timestamp_in_database_timezone: 2021-08-14T14:55:20.507
+        timestamp_in_database_timezone: 2021-08-14T14:55:20.507Z
         timeflow_id: timeflow-123
         timestamp: 2021-05-01T08:51:34.148Z
     RollbackVDBFromBookmarkParameters:
@@ -35728,7 +34792,7 @@ components:
         appdata_toolkit: APPDATA_TOOLKIT-1
         mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
         id: snapshot-123
-        effective_expiration: 2021-07-04
+        effective_expiration: 2000-01-23
         retention: -1
         timestamp: 2021-05-01T08:51:34.148Z
         retain_forever: false
@@ -35750,7 +34814,7 @@ components:
         namespace: NAMESPACE-1
         name: '@2023-02-02T14:30:00.589'
         location: "1178883"
-        expiration: 2021-07-04
+        expiration: 2000-01-23
       properties:
         id:
           description: The Snapshot ID.
@@ -35845,7 +34909,6 @@ components:
           description: "The expiration date of this snapshot. If this is unset and\
             \ retain_forever is false, and the snapshot is not included in a Bookmark,\
             \ the snapshot is subject to the retention policy of its dataset."
-          example: 2021-07-04
           format: date
           type: string
         retain_forever:
@@ -35856,7 +34919,6 @@ components:
         effective_expiration:
           description: The effective expiration is that max of the snapshot expiration
             and the expiration of any Bookmark which includes this snapshot.
-          example: 2021-07-04
           format: date
           type: string
         effective_retain_forever:
@@ -35986,7 +35048,7 @@ components:
     SnapshotDayRange:
       description: Count of TimeFlow snapshots aggregated by day.
       example:
-        date: 2019-09-20
+        date: 2000-01-23
         end_of_day: 2019-09-21T07:00:00Z
         start_of_day: 2019-09-20T07:00:00Z
         count: 1
@@ -35998,7 +35060,6 @@ components:
           type: integer
         date:
           description: Date for which TimeFlow snapshots have been aggregated.
-          example: 2019-09-20
           format: date
           type: string
         start_of_day:
@@ -36015,11 +35076,11 @@ components:
     SnapshotsDayRangesResponse:
       example:
         items:
-        - date: 2019-09-20
+        - date: 2000-01-23
           end_of_day: 2019-09-21T07:00:00Z
           start_of_day: 2019-09-20T07:00:00Z
           count: 1
-        - date: 2019-09-20
+        - date: 2000-01-23
           end_of_day: 2019-09-21T07:00:00Z
           start_of_day: 2019-09-20T07:00:00Z
           count: 1
@@ -36887,13 +35948,12 @@ components:
           description: A note of this algorithm revision.
           type: string
       type: object
-      x-internal: true
     UpdateBookmarkParameters:
       description: Parameters to update a Bookmark.
       example:
         retain_forever: false
         name: my-bookmark-123
-        expiration: 2021-07-04
+        expiration: 2000-01-23
       properties:
         name:
           description: The user-defined name of this bookmark.
@@ -36903,7 +35963,6 @@ components:
           type: string
         expiration:
           description: The expiration for this Bookmark. Mutually exclusive with retain_forever.
-          example: 2021-07-04
           format: date
           type: string
         retain_forever:
@@ -37068,49 +36127,6 @@ components:
           format: int32
           type: integer
       type: object
-    UpdateReplicationProfileParameters:
-      description: The parameters to update a ReplicationProfile.
-      properties:
-        name:
-          description: The ReplicationProfile name.
-          type: string
-        description:
-          description: The ReplicationProfile description.
-          maxLength: 4096
-          type: string
-        schedule:
-          description: Replication schedule in the form of a quartz-formatted string.
-          maxLength: 256
-          minLength: 1
-          type: string
-        replication_objects:
-          description: The objects that are replicated by this ReplicationProfile.
-          items:
-            type: string
-          type: array
-        bandwidth_limit:
-          description: Bandwidth limit (MB/s) for replication network traffic. A value
-            of 0 means no limit.
-          minimum: 0
-          type: integer
-        number_of_connections:
-          description: Total number of transport connections to use.
-          maximum: 16
-          minimum: 1
-          type: integer
-        encrypted:
-          description: Encrypt replication network traffic.
-          type: boolean
-        automatic_replication:
-          description: Indication whether the replication spec schedule is enabled
-            or not.
-          type: boolean
-        use_system_socks_setting:
-          description: Connect to the replication target host via the system-wide
-            SOCKS proxy.
-          type: boolean
-      type: object
-      x-internal: true
     UpdateRepositoryParameters:
       example:
         database_type: ORACLE
@@ -37142,11 +36158,10 @@ components:
       description: Parameters to update the expiration of a Snapshot.
       example:
         retain_forever: false
-        expiration: 2021-07-04
+        expiration: 2000-01-23
       properties:
         expiration:
           description: The expiration for this snapshot. Mutually exclusive with retain_forever.
-          example: 2021-07-04
           format: date
           type: string
         retain_forever:
@@ -37908,8 +36923,8 @@ components:
           value: value1
         - key: key2
           value: value2
-        creation_date: 2021-05-01T08:51:34.148000+00:00
-        last_refreshed_date: 2023-04-15T02:11:14.248000+00:00
+        creation_date: 2021-05-01T08:51:34.148Z
+        last_refreshed_date: 2023-04-15T02:11:14.248Z
         hooks:
           pre_refresh:
           - name: Print the current user
@@ -39153,7 +38168,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -39186,7 +38201,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -39231,7 +38246,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -39329,7 +38344,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -39362,7 +38377,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -40320,7 +39335,7 @@ components:
           data_uuid: 1734315df891991101eb96963535afa0
           storage_size: 339292672
           plugin_version: "1.0"
-          creation_date: 2021-05-01T08:51:34.148000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
           group_name: DSources
           enabled: true
           engine_id: engine-123
@@ -40360,7 +39375,7 @@ components:
           data_uuid: 1734315df891991101eb96963535afa0
           storage_size: 339292672
           plugin_version: "1.0"
-          creation_date: 2021-05-01T08:51:34.148000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
           group_name: DSources
           enabled: true
           engine_id: engine-123
@@ -40429,7 +39444,7 @@ components:
           data_uuid: 1734315df891991101eb96963535afa0
           storage_size: 339292672
           plugin_version: "1.0"
-          creation_date: 2021-05-01T08:51:34.148000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
           group_name: DSources
           enabled: true
           engine_id: engine-123
@@ -40469,7 +39484,7 @@ components:
           data_uuid: 1734315df891991101eb96963535afa0
           storage_size: 339292672
           plugin_version: "1.0"
-          creation_date: 2021-05-01T08:51:34.148000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
           group_name: DSources
           enabled: true
           engine_id: engine-123
@@ -41074,8 +40089,8 @@ components:
             value: value1
           - key: key2
             value: value2
-          creation_date: 2021-05-01T08:51:34.148000+00:00
-          last_refreshed_date: 2023-04-15T02:11:14.248000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
+          last_refreshed_date: 2023-04-15T02:11:14.248Z
           hooks:
             pre_refresh:
             - name: Print the current user
@@ -41125,8 +40140,8 @@ components:
             value: value1
           - key: key2
             value: value2
-          creation_date: 2021-05-01T08:51:34.148000+00:00
-          last_refreshed_date: 2023-04-15T02:11:14.248000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
+          last_refreshed_date: 2023-04-15T02:11:14.248Z
           hooks:
             pre_refresh:
             - name: Print the current user
@@ -41205,8 +40220,8 @@ components:
             value: value1
           - key: key2
             value: value2
-          creation_date: 2021-05-01T08:51:34.148000+00:00
-          last_refreshed_date: 2023-04-15T02:11:14.248000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
+          last_refreshed_date: 2023-04-15T02:11:14.248Z
           hooks:
             pre_refresh:
             - name: Print the current user
@@ -41256,8 +40271,8 @@ components:
             value: value1
           - key: key2
             value: value2
-          creation_date: 2021-05-01T08:51:34.148000+00:00
-          last_refreshed_date: 2023-04-15T02:11:14.248000+00:00
+          creation_date: 2021-05-01T08:51:34.148Z
+          last_refreshed_date: 2023-04-15T02:11:14.248Z
           hooks:
             pre_refresh:
             - name: Print the current user
@@ -41436,7 +40451,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -41469,7 +40484,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -41518,7 +40533,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -41551,7 +40566,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -42709,7 +41724,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -42742,7 +41757,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -42791,7 +41806,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -42824,7 +41839,7 @@ components:
           vdb_ids:
           - vdb-123
           - vdb-456
-          expiration: 2021-07-04
+          expiration: 2000-01-23
           bookmark_status: ACTIVE
           ss_bookmark_reference: ss_bookmark_reference
           id: bookmark-123
@@ -43049,7 +42064,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43071,7 +42086,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
         - creation_time: 2023-02-02T19:30:00.589Z
           temporary: false
           ase_db_encryption_key: keyname
@@ -43088,7 +42103,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43110,7 +42125,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
       properties:
         items:
           items:
@@ -43139,7 +42154,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43161,7 +42176,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
         - creation_time: 2023-02-02T19:30:00.589Z
           temporary: false
           ase_db_encryption_key: keyname
@@ -43178,7 +42193,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43200,7 +42215,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
       properties:
         items:
           items:
@@ -43227,7 +42242,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43249,7 +42264,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
         - creation_time: 2023-02-02T19:30:00.589Z
           temporary: false
           ase_db_encryption_key: keyname
@@ -43266,7 +42281,7 @@ components:
           appdata_toolkit: APPDATA_TOOLKIT-1
           mssql_backup_set_uuid: 54290b71-58cd-463d-bd62-7219d4c4d2d5
           id: snapshot-123
-          effective_expiration: 2021-07-04
+          effective_expiration: 2000-01-23
           retention: -1
           timestamp: 2021-05-01T08:51:34.148Z
           retain_forever: false
@@ -43288,7 +42303,7 @@ components:
           namespace: NAMESPACE-1
           name: '@2023-02-02T14:30:00.589'
           location: "1178883"
-          expiration: 2021-07-04
+          expiration: 2000-01-23
       properties:
         items:
           items:
@@ -47614,12 +46629,6 @@ components:
           $ref: '#/components/schemas/Job'
       title: ReplicationProfileDeleteJobResponse
       type: object
-    ReplicationProfileUpdateJobResponse:
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: ReplicationProfileUpdateJobResponse
-      type: object
     ListHyperscaleInstancesResponse:
       example:
         response_metadata:
@@ -49208,64 +48217,6 @@ components:
         job:
           $ref: '#/components/schemas/Job'
       title: DeleteEngineResponse
-      type: object
-    UpdateEngineAutoTaggingConfigResponse:
-      example:
-        job:
-          trace_id: trace_id
-          engine_ids:
-          - engine_ids
-          - engine_ids
-          target_name: vdb
-          virtualization_tasks:
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          is_waiting_for_telemetry: true
-          target_id: vdb-123
-          type: DB_REFRESH
-          percent_complete: 50
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-          warning_message: "Failed to remove local MaskingJob, engineId: 3 localMaskingJobId:\
-            \ 7."
-          start_time: 2022-01-02T05:11:24.148Z
-          update_time: 2022-01-02T06:11:24.148Z
-          account_id: 1
-          error_details: Unable to connect to the engine.
-          engines:
-          - engine_id: engine_id
-            engine_name: engine_name
-          - engine_id: engine_id
-            engine_name: engine_name
-          account_name: User 1
-          id: job-123
-          localized_type: DB Refresh
-          status: RUNNING
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: UpdateEngineAutoTaggingConfigResponse
       type: object
     SearchEnginesResponse:
       example:
@@ -51058,17 +50009,6 @@ components:
           $ref: '#/components/schemas/PaginatedResponseMetadata'
       title: SearchExecutionEventsResponse
       type: object
-    MaskingFileUploadResponse:
-      example:
-        file:
-          filename: filename
-          file_reference_id: file_reference_id
-          file_size: 0
-      properties:
-        file:
-          $ref: '#/components/schemas/MaskingFileUpload'
-      title: MaskingFileUploadResponse
-      type: object
     ListMaskingJobsResponse:
       example:
         response_metadata:
@@ -51764,12 +50704,6 @@ components:
           $ref: '#/components/schemas/Job'
       title: RemoveEngineFromJobResponse
       type: object
-    DeleteAlgorithmResponse:
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: DeleteAlgorithmResponse
-      type: object
     ListAlgorithmsResponse:
       example:
         response_metadata:
@@ -51807,15 +50741,6 @@ components:
         response_metadata:
           $ref: '#/components/schemas/PaginatedResponseMetadata'
       title: ListAlgorithmsResponse
-      type: object
-    CreateAlgorithmResponse:
-      properties:
-        id:
-          description: The created algorithm's ID.
-          type: string
-        job:
-          $ref: '#/components/schemas/Job'
-      title: CreateAlgorithmResponse
       type: object
     ListAlgorithmRevisionsResponse:
       example:
@@ -51875,15 +50800,6 @@ components:
           $ref: '#/components/schemas/PaginatedResponseMetadata'
       title: ListAlgorithmRevisionsResponse
       type: object
-    CreateAlgorithmRevisionResponse:
-      properties:
-        id:
-          description: The created algorithm revision's ID.
-          type: string
-        job:
-          $ref: '#/components/schemas/Job'
-      title: CreateAlgorithmRevisionResponse
-      type: object
     SearchAlgorithmRevisionsResponse:
       example:
         response_metadata:
@@ -51942,12 +50858,6 @@ components:
           $ref: '#/components/schemas/PaginatedResponseMetadata'
       title: SearchAlgorithmRevisionsResponse
       type: object
-    DeleteAlgorithmRevisionResponse:
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: DeleteAlgorithmRevisionResponse
-      type: object
     UpdateAlgorithmRevisionResponse:
       example:
         job:
@@ -52005,64 +50915,6 @@ components:
         job:
           $ref: '#/components/schemas/Job'
       title: UpdateAlgorithmRevisionResponse
-      type: object
-    SetAlgorithmPrimaryRevisionResponse:
-      example:
-        job:
-          trace_id: trace_id
-          engine_ids:
-          - engine_ids
-          - engine_ids
-          target_name: vdb
-          virtualization_tasks:
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          is_waiting_for_telemetry: true
-          target_id: vdb-123
-          type: DB_REFRESH
-          percent_complete: 50
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-          warning_message: "Failed to remove local MaskingJob, engineId: 3 localMaskingJobId:\
-            \ 7."
-          start_time: 2022-01-02T05:11:24.148Z
-          update_time: 2022-01-02T06:11:24.148Z
-          account_id: 1
-          error_details: Unable to connect to the engine.
-          engines:
-          - engine_id: engine_id
-            engine_name: engine_name
-          - engine_id: engine_id
-            engine_name: engine_name
-          account_name: User 1
-          id: job-123
-          localized_type: DB Refresh
-          status: RUNNING
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: SetAlgorithmPrimaryRevisionResponse
       type: object
     SearchAlgorithmsResponse:
       example:
@@ -52157,250 +51009,6 @@ components:
         response_metadata:
           $ref: '#/components/schemas/PaginatedResponseMetadata'
       title: SearchMaskingEnvironmentsResponse
-      type: object
-    ListMaskingPluginsResponse:
-      example:
-        response_metadata:
-          prev_cursor: prev_cursor
-          next_cursor: next_cursor
-          total: 0
-        items:
-        - frameworks:
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          author: Delphix
-          built_in: true
-          name: dlpx-core
-          plugin_type: EXTENDED_ALGORITHM
-          sdk_version: 1.20.0
-          description: Delphix Core Masking Algorithm Plugin
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-          install_date: 2000-01-23T04:56:07.000+00:00
-          version: 1.20.0
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-        - frameworks:
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          author: Delphix
-          built_in: true
-          name: dlpx-core
-          plugin_type: EXTENDED_ALGORITHM
-          sdk_version: 1.20.0
-          description: Delphix Core Masking Algorithm Plugin
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-          install_date: 2000-01-23T04:56:07.000+00:00
-          version: 1.20.0
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/MaskingPlugin'
-          type: array
-        response_metadata:
-          $ref: '#/components/schemas/PaginatedResponseMetadata'
-      title: ListMaskingPluginsResponse
-      type: object
-    InstallMaskingPluginResponse:
-      example:
-        id: id
-        job:
-          trace_id: trace_id
-          engine_ids:
-          - engine_ids
-          - engine_ids
-          target_name: vdb
-          virtualization_tasks:
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          is_waiting_for_telemetry: true
-          target_id: vdb-123
-          type: DB_REFRESH
-          percent_complete: 50
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-          warning_message: "Failed to remove local MaskingJob, engineId: 3 localMaskingJobId:\
-            \ 7."
-          start_time: 2022-01-02T05:11:24.148Z
-          update_time: 2022-01-02T06:11:24.148Z
-          account_id: 1
-          error_details: Unable to connect to the engine.
-          engines:
-          - engine_id: engine_id
-            engine_name: engine_name
-          - engine_id: engine_id
-            engine_name: engine_name
-          account_name: User 1
-          id: job-123
-          localized_type: DB Refresh
-          status: RUNNING
-      properties:
-        id:
-          description: The installed plugin's ID.
-          type: string
-        job:
-          $ref: '#/components/schemas/Job'
-      title: InstallMaskingPluginResponse
-      type: object
-    DeleteMaskingPluginResponse:
-      example:
-        job:
-          trace_id: trace_id
-          engine_ids:
-          - engine_ids
-          - engine_ids
-          target_name: vdb
-          virtualization_tasks:
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          - start_time: 2000-01-23T04:56:07.000+00:00
-            end_time: 2000-01-23T04:56:07.000+00:00
-            id: id
-            title: title
-            parent_job_id: parent_job_id
-            percent_complete: 8
-            events:
-            - message_details: message_details
-            - message_details: message_details
-            status: PENDING
-          is_waiting_for_telemetry: true
-          target_id: vdb-123
-          type: DB_REFRESH
-          percent_complete: 50
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-          warning_message: "Failed to remove local MaskingJob, engineId: 3 localMaskingJobId:\
-            \ 7."
-          start_time: 2022-01-02T05:11:24.148Z
-          update_time: 2022-01-02T06:11:24.148Z
-          account_id: 1
-          error_details: Unable to connect to the engine.
-          engines:
-          - engine_id: engine_id
-            engine_name: engine_name
-          - engine_id: engine_id
-            engine_name: engine_name
-          account_name: User 1
-          id: job-123
-          localized_type: DB Refresh
-          status: RUNNING
-      properties:
-        job:
-          $ref: '#/components/schemas/Job'
-      title: DeleteMaskingPluginResponse
-      type: object
-    SearchMaskingPluginsResponse:
-      example:
-        response_metadata:
-          prev_cursor: prev_cursor
-          next_cursor: next_cursor
-          total: 0
-        items:
-        - frameworks:
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          author: Delphix
-          built_in: true
-          name: dlpx-core
-          plugin_type: EXTENDED_ALGORITHM
-          sdk_version: 1.20.0
-          description: Delphix Core Masking Algorithm Plugin
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-          install_date: 2000-01-23T04:56:07.000+00:00
-          version: 1.20.0
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-        - frameworks:
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          - masking_type: STRING
-            name: Secure Lookup
-            description: Secure Lookup Framework
-            id: dc91e41c-aade-4404-9084-179cb90d07c6
-          author: Delphix
-          built_in: true
-          name: dlpx-core
-          plugin_type: EXTENDED_ALGORITHM
-          sdk_version: 1.20.0
-          description: Delphix Core Masking Algorithm Plugin
-          id: dc91e41c-aade-4404-9084-179cb90d07c6
-          install_date: 2000-01-23T04:56:07.000+00:00
-          version: 1.20.0
-          tags:
-          - value: value-1
-            key: key-1
-          - value: value-1
-            key: key-1
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/MaskingPlugin'
-          type: array
-        response_metadata:
-          $ref: '#/components/schemas/PaginatedResponseMetadata'
-      title: SearchMaskingPluginsResponse
       type: object
     DSourceHooks_ops_pre_sync_inner:
       properties:

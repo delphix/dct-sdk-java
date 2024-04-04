@@ -53,7 +53,7 @@ import com.delphix.dct.JSON;
 /**
  * An Access group is the DCT mechanism to grant roles to accounts. Each account has its own Access Group which can be used to manage permissions for that account, and an unlimited number of other Access groups can be created to manage permissions by groups of accounts.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T12:02:33.321319+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
 public class AccessGroup {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

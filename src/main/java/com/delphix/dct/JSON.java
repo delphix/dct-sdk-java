@@ -150,8 +150,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ConnectorUpdateParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CopyMaskingJobParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CopyMaskingJobResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CreateAlgorithmResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CreateAlgorithmRevisionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CreateBookmarkResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CreateDatabaseTemplateResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.CreateEnvironmentResponse.CustomTypeAdapterFactory());
@@ -182,8 +180,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DatabaseTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DatabaseTemplateCreateParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DatasetGroup.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteAlgorithmResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteAlgorithmRevisionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteDSourceRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteDatabaseTemplateResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteEngineResponse.CustomTypeAdapterFactory());
@@ -193,7 +189,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteHyperscaleConnectorResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteHyperscaleMountPointResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteMaskingJobResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteMaskingPluginResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteScopeObjectTags.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteScopedObjectItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.DeleteSnapshotResponse.CustomTypeAdapterFactory());
@@ -262,7 +257,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.HyperscaleMountPointUpdateParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.HyperscaleTaskError.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.HyperscaleTaskEvent.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.InstallMaskingPluginResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.Job.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.KDCServers.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.KerberosConfig.CustomTypeAdapterFactory());
@@ -299,7 +293,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListMaskingEnvironmentsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListMaskingJobSourceEnginesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListMaskingJobsResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListMaskingPluginsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListPasswordVaultsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListRegisteredEnginesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ListReplicationProfilesResponse.CustomTypeAdapterFactory());
@@ -325,7 +318,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingEnvironment.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingExecutionMetrics.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingExecutionMetricsReportResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingFileUploadResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingJob.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingJobConnectorsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.MaskingJobSourceEngine.CustomTypeAdapterFactory());
@@ -396,7 +388,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.Replica.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ReplicationProfile.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ReplicationProfileDeleteJobResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ReplicationProfileUpdateJobResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ReportingSchedule.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.ReportingScheduleCreateParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.Repository.CustomTypeAdapterFactory());
@@ -451,7 +442,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchMaskingEnvironmentsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchMaskingJobSourceEnginesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchMaskingJobsResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchMaskingPluginsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchPasswordVaultResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchReplicationProfilesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchReportingScheduleResponse.CustomTypeAdapterFactory());
@@ -466,7 +456,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchVDBGroupsByBookmarkResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchVDBsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SearchVirtualizationPoliciesResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SetAlgorithmPrimaryRevisionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.Snapshot.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SnapshotCompatibleEnvironmentsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.SnapshotCompatibleRepositoryRequest.CustomTypeAdapterFactory());
@@ -501,13 +490,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UnregisterHyperscaleInstanceResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UnsetSnapshotRetentionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateAccessGroupScope.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateAlgorithmRevisionParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateAlgorithmRevisionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateBookmarkParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateBookmarkResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateConnectorResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateDatabaseTemplateParameters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateDatabaseTemplateResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateEngineAutoTaggingConfigResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateEnvironmentResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateEnvironmentUserResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.delphix.dct.models.UpdateHostResponse.CustomTypeAdapterFactory());

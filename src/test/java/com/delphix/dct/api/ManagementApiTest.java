@@ -15,7 +15,6 @@ package com.delphix.dct.api;
 
 import com.delphix.dct.ApiException;
 import com.delphix.dct.models.APIClassificationConfig;
-import com.delphix.dct.models.AutoTaggingConfig;
 import com.delphix.dct.models.BundleUploadEvent;
 import com.delphix.dct.models.DeleteEngineResponse;
 import com.delphix.dct.models.DeleteTag;
@@ -40,7 +39,6 @@ import com.delphix.dct.models.SearchEnginesResponse;
 import com.delphix.dct.models.SearchHashicorpVaultsResponse;
 import com.delphix.dct.models.TagsRequest;
 import com.delphix.dct.models.TagsResponse;
-import com.delphix.dct.models.UpdateEngineAutoTaggingConfigResponse;
 import com.delphix.dct.models.ValidateJavaParameters;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -142,18 +140,6 @@ public class ManagementApiTest {
     @Test
     public void getApiClassificationTest() throws ApiException {
         APIClassificationConfig response = api.getApiClassification();
-        // TODO: test validations
-    }
-
-    /**
-     * Returns the engine&#39;s auto tagging configuration.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getEngineAutoTaggingConfigTest() throws ApiException {
-        String engineId = null;
-        AutoTaggingConfig response = api.getEngineAutoTaggingConfig(engineId);
         // TODO: test validations
     }
 
@@ -431,19 +417,6 @@ public class ManagementApiTest {
     public void updateApiClassificationTest() throws ApiException {
         APIClassificationConfig apIClassificationConfig = null;
         APIClassificationConfig response = api.updateApiClassification(apIClassificationConfig);
-        // TODO: test validations
-    }
-
-    /**
-     * Update the engine&#39;s auto tagging configuration.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateEngineAutoTaggingConfigTest() throws ApiException {
-        String engineId = null;
-        AutoTaggingConfig autoTaggingConfig = null;
-        UpdateEngineAutoTaggingConfigResponse response = api.updateEngineAutoTaggingConfig(engineId, autoTaggingConfig);
         // TODO: test validations
     }
 

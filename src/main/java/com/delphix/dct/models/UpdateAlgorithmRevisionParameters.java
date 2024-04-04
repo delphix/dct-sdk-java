@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -48,56 +47,56 @@ import java.util.Set;
 import com.delphix.dct.JSON;
 
 /**
- * Parameters to update the expiration of a Snapshot.
+ * Parameters to update a masking algorithm revision.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-04T14:49:34.152994+05:30[Asia/Kolkata]", comments = "Generator version: 7.4.0")
-public class UpdateSnapshotParameters {
-  public static final String SERIALIZED_NAME_EXPIRATION = "expiration";
-  @SerializedName(SERIALIZED_NAME_EXPIRATION)
-  private LocalDate expiration;
+public class UpdateAlgorithmRevisionParameters {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public static final String SERIALIZED_NAME_RETAIN_FOREVER = "retain_forever";
-  @SerializedName(SERIALIZED_NAME_RETAIN_FOREVER)
-  private Boolean retainForever;
+  public static final String SERIALIZED_NAME_NOTE = "note";
+  @SerializedName(SERIALIZED_NAME_NOTE)
+  private String note;
 
-  public UpdateSnapshotParameters() {
+  public UpdateAlgorithmRevisionParameters() {
   }
 
-  public UpdateSnapshotParameters expiration(LocalDate expiration) {
-    this.expiration = expiration;
+  public UpdateAlgorithmRevisionParameters name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * The expiration for this snapshot. Mutually exclusive with retain_forever.
-   * @return expiration
+   * The name of this algorithm revision.
+   * @return name
   **/
   @javax.annotation.Nullable
-  public LocalDate getExpiration() {
-    return expiration;
+  public String getName() {
+    return name;
   }
 
-  public void setExpiration(LocalDate expiration) {
-    this.expiration = expiration;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public UpdateSnapshotParameters retainForever(Boolean retainForever) {
-    this.retainForever = retainForever;
+  public UpdateAlgorithmRevisionParameters note(String note) {
+    this.note = note;
     return this;
   }
 
    /**
-   * Indicates that the snapshot should be retained forever.
-   * @return retainForever
+   * A note of this algorithm revision.
+   * @return note
   **/
   @javax.annotation.Nullable
-  public Boolean getRetainForever() {
-    return retainForever;
+  public String getNote() {
+    return note;
   }
 
-  public void setRetainForever(Boolean retainForever) {
-    this.retainForever = retainForever;
+  public void setNote(String note) {
+    this.note = note;
   }
 
 
@@ -110,22 +109,22 @@ public class UpdateSnapshotParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateSnapshotParameters updateSnapshotParameters = (UpdateSnapshotParameters) o;
-    return Objects.equals(this.expiration, updateSnapshotParameters.expiration) &&
-        Objects.equals(this.retainForever, updateSnapshotParameters.retainForever);
+    UpdateAlgorithmRevisionParameters updateAlgorithmRevisionParameters = (UpdateAlgorithmRevisionParameters) o;
+    return Objects.equals(this.name, updateAlgorithmRevisionParameters.name) &&
+        Objects.equals(this.note, updateAlgorithmRevisionParameters.note);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiration, retainForever);
+    return Objects.hash(name, note);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateSnapshotParameters {\n");
-    sb.append("    expiration: ").append(toIndentedString(expiration)).append("\n");
-    sb.append("    retainForever: ").append(toIndentedString(retainForever)).append("\n");
+    sb.append("class UpdateAlgorithmRevisionParameters {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,8 +147,8 @@ public class UpdateSnapshotParameters {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("expiration");
-    openapiFields.add("retain_forever");
+    openapiFields.add("name");
+    openapiFields.add("note");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -159,45 +158,51 @@ public class UpdateSnapshotParameters {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateSnapshotParameters
+  * @throws IOException if the JSON Element is invalid with respect to UpdateAlgorithmRevisionParameters
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateSnapshotParameters.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateSnapshotParameters is not found in the empty JSON string", UpdateSnapshotParameters.openapiRequiredFields.toString()));
+        if (!UpdateAlgorithmRevisionParameters.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateAlgorithmRevisionParameters is not found in the empty JSON string", UpdateAlgorithmRevisionParameters.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateSnapshotParameters.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateSnapshotParameters` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!UpdateAlgorithmRevisionParameters.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateAlgorithmRevisionParameters` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("note") != null && !jsonObj.get("note").isJsonNull()) && !jsonObj.get("note").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("note").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateSnapshotParameters.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateSnapshotParameters' and its subtypes
+       if (!UpdateAlgorithmRevisionParameters.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateAlgorithmRevisionParameters' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateSnapshotParameters> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateSnapshotParameters.class));
+       final TypeAdapter<UpdateAlgorithmRevisionParameters> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateAlgorithmRevisionParameters.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateSnapshotParameters>() {
+       return (TypeAdapter<T>) new TypeAdapter<UpdateAlgorithmRevisionParameters>() {
            @Override
-           public void write(JsonWriter out, UpdateSnapshotParameters value) throws IOException {
+           public void write(JsonWriter out, UpdateAlgorithmRevisionParameters value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateSnapshotParameters read(JsonReader in) throws IOException {
+           public UpdateAlgorithmRevisionParameters read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -208,18 +213,18 @@ public class UpdateSnapshotParameters {
   }
 
  /**
-  * Create an instance of UpdateSnapshotParameters given an JSON string
+  * Create an instance of UpdateAlgorithmRevisionParameters given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateSnapshotParameters
-  * @throws IOException if the JSON string is invalid with respect to UpdateSnapshotParameters
+  * @return An instance of UpdateAlgorithmRevisionParameters
+  * @throws IOException if the JSON string is invalid with respect to UpdateAlgorithmRevisionParameters
   */
-  public static UpdateSnapshotParameters fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateSnapshotParameters.class);
+  public static UpdateAlgorithmRevisionParameters fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateAlgorithmRevisionParameters.class);
   }
 
  /**
-  * Convert an instance of UpdateSnapshotParameters to an JSON string
+  * Convert an instance of UpdateAlgorithmRevisionParameters to an JSON string
   *
   * @return JSON string
   */
