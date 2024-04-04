@@ -69,7 +69,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -206,7 +206,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -411,7 +411,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -484,7 +484,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -553,7 +553,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 

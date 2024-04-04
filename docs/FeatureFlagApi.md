@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../DCT_README#ApiKeyAuth)
 
 ### HTTP request headers
 
