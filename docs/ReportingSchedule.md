@@ -11,7 +11,7 @@
 |**reportType** | [**ReportTypeEnum**](#ReportTypeEnum) |  |  |
 |**cronExpression** | **String** | Standard cron expressions are supported e.g. 0 15 10 L * ?  - Schedule at 10:15 AM on the last day of every month, 0 0 2 ? * Mon-Fri - Schedule at 2:00 AM every Monday, Tuesday, Wednesday, Thursday and Friday. For more details kindly refer- \&quot;http://www.quartz-scheduler.org/documentation/\&quot; |  |
 |**timeZone** | **String** | Timezones are specified according to the Olson tzinfo database - \&quot;https://en.wikipedia.org/wiki/List_of_tz_database_time_zones\&quot;. |  [optional] |
-|**message** | **String** |  |  [optional] |
+|**message** | **String** |  |  |
 |**fileFormat** | [**FileFormatEnum**](#FileFormatEnum) |  |  |
 |**enabled** | **Boolean** |  |  |
 |**recipients** | **Set&lt;String&gt;** |  |  |
@@ -33,6 +33,7 @@
 | MASKING_EXECUTION_METRICS | &quot;MASKING_EXECUTION_METRICS&quot; |
 | AUDIT_LOGS_SUMMARY | &quot;AUDIT_LOGS_SUMMARY&quot; |
 | STORAGE_SAVINGS_SUMMARY | &quot;STORAGE_SAVINGS_SUMMARY&quot; |
+| DATA_RISK_SUMMARY | &quot;DATA_RISK_SUMMARY&quot; |
 
 
 
@@ -72,6 +73,23 @@
 | PARENT_TIMEFLOW_TIMEZONE | &quot;parent_timeflow_timezone&quot; |
 | ENABLED | &quot;enabled&quot; |
 | STATUS | &quot;status&quot; |
+| CONNECTOR_ID | &quot;connector_id&quot; |
+| CONNECTOR_NAME | &quot;connector_name&quot; |
+| CONNECTOR_TYPE | &quot;connector_type&quot; |
+| LAST_PROFILED_DATE | &quot;last_profiled_date&quot; |
+| LAST_MASKED_DATE | &quot;last_masked_date&quot; |
+| IS_PROFILED | &quot;is_profiled&quot; |
+| IS_SENSITIVE_DATA | &quot;is_sensitive_data&quot; |
+| IS_MASKED | &quot;is_masked&quot; |
+| IS_AT_RISK | &quot;is_at_risk&quot; |
+| DATA_ELEMENTS_TOTAL | &quot;data_elements_total&quot; |
+| DATA_ELEMENTS_NOT_SENSITIVE | &quot;data_elements_not_sensitive&quot; |
+| DATA_ELEMENTS_SENSITIVE_MASKED | &quot;data_elements_sensitive_masked&quot; |
+| DATA_ELEMENTS_SENSITIVE_UNMASKED | &quot;data_elements_sensitive_unmasked&quot; |
+| RECORDS_TOTAL | &quot;records_total&quot; |
+| RECORDS_NOT_SENSITIVE | &quot;records_not_sensitive&quot; |
+| RECORDS_SENSITIVE_MASKED | &quot;records_sensitive_masked&quot; |
+| RECORDS_SENSITIVE_UNMASKED | &quot;records_sensitive_unmasked&quot; |
 | _ENGINE_ID | &quot;-engine_id&quot; |
 | _ENGINE_NAME | &quot;-engine_name&quot; |
 | _ENGINE_HOSTNAME | &quot;-engine_hostname&quot; |
@@ -96,6 +114,23 @@
 | _PARENT_TIMEFLOW_TIMEZONE | &quot;-parent_timeflow_timezone&quot; |
 | _ENABLED | &quot;-enabled&quot; |
 | _STATUS | &quot;-status&quot; |
+| _CONNECTOR_ID | &quot;-connector_id&quot; |
+| _CONNECTOR_NAME | &quot;-connector_name&quot; |
+| _CONNECTOR_TYPE | &quot;-connector_type&quot; |
+| _LAST_PROFILED_DATE | &quot;-last_profiled_date&quot; |
+| _LAST_MASKED_DATE | &quot;-last_masked_date&quot; |
+| _IS_PROFILED | &quot;-is_profiled&quot; |
+| _IS_SENSITIVE_DATA | &quot;-is_sensitive_data&quot; |
+| _IS_MASKED | &quot;-is_masked&quot; |
+| _IS_AT_RISK | &quot;-is_at_risk&quot; |
+| _DATA_ELEMENTS_TOTAL | &quot;-data_elements_total&quot; |
+| _DATA_ELEMENTS_NOT_SENSITIVE | &quot;-data_elements_not_sensitive&quot; |
+| _DATA_ELEMENTS_SENSITIVE_MASKED | &quot;-data_elements_sensitive_masked&quot; |
+| _DATA_ELEMENTS_SENSITIVE_UNMASKED | &quot;-data_elements_sensitive_unmasked&quot; |
+| _RECORDS_TOTAL | &quot;-records_total&quot; |
+| _RECORDS_NOT_SENSITIVE | &quot;-records_not_sensitive&quot; |
+| _RECORDS_SENSITIVE_MASKED | &quot;-records_sensitive_masked&quot; |
+| _RECORDS_SENSITIVE_UNMASKED | &quot;-records_sensitive_unmasked&quot; |
 
 
 

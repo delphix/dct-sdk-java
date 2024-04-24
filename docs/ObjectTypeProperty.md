@@ -16,6 +16,7 @@ A DCT object type.
 
 | Name | Value |
 |---- | -----|
+| ALGORITHM | &quot;ALGORITHM&quot; |
 | ACCESS_GROUP | &quot;ACCESS_GROUP&quot; |
 | ACCOUNT | &quot;ACCOUNT&quot; |
 | AUDIT_LOGS_SUMMARY_REPORT | &quot;AUDIT_LOGS_SUMMARY_REPORT&quot; |
@@ -23,6 +24,7 @@ A DCT object type.
 | API_USAGE_REPORT | &quot;API_USAGE_REPORT&quot; |
 | BOOKMARK | &quot;BOOKMARK&quot; |
 | CDB | &quot;CDB&quot; |
+| DATA_CLASS | &quot;DATA_CLASS&quot; |
 | DATABASE_TEMPLATE | &quot;DATABASE_TEMPLATE&quot; |
 | DSOURCE | &quot;DSOURCE&quot; |
 | ENGINE | &quot;ENGINE&quot; |
@@ -30,6 +32,7 @@ A DCT object type.
 | MASKING_JOB | &quot;MASKING_JOB&quot; |
 | MASKING_ENVIRONMENT | &quot;MASKING_ENVIRONMENT&quot; |
 | MASKING_ALGORITHM_REVISION | &quot;MASKING_ALGORITHM_REVISION&quot; |
+| MASKING_FILE_UPLOAD | &quot;MASKING_FILE_UPLOAD&quot; |
 | MASKING_JOB_SET | &quot;MASKING_JOB_SET&quot; |
 | REPORT_SCHEDULE | &quot;REPORT_SCHEDULE&quot; |
 | SOURCE | &quot;SOURCE&quot; |
@@ -72,7 +75,9 @@ A DCT object type.
 | REPLICATION_PROFILE | &quot;REPLICATION_PROFILE&quot; |
 | ENGINE_PERFORMANCE_ANALYTIC_REPORT | &quot;ENGINE_PERFORMANCE_ANALYTIC_REPORT&quot; |
 | STAGING_SOURCE | &quot;STAGING_SOURCE&quot; |
+| DATA_RISK_REPORT | &quot;DATA_RISK_REPORT&quot; |
 | ENGINE_GLOBAL_OBJECT_STATE_REPORT | &quot;ENGINE_GLOBAL_OBJECT_STATE_REPORT&quot; |
+| DATA_LAYOUT | &quot;DATA_LAYOUT&quot; |
 
 
 

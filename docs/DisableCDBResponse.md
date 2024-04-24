@@ -1,6 +1,6 @@
 
 
-# DeleteAlgorithmRevisionResponse
+# DisableCDBResponse
 
 
 ## Properties

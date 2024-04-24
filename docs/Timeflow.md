@@ -21,6 +21,10 @@ Virtualization Engine Timeflow of a dSource or VDB.
 |**parentPointLocation** | **String** | The location on the parent timeflow from which this timeflow was provisioned. This will not be present for timeflows derived from linked sources. |  [optional] |
 |**parentPointTimestamp** | **OffsetDateTime** | The timestamp on the parent timeflow from which this timeflow was provisioned. This will not be present for timeflows derived from linked sources. |  [optional] |
 |**parentPointTimeflowId** | **String** | A reference to the parent timeflow from which this timeflow was provisioned. This will not be present for timeflows derived from linked sources. |  [optional] |
+|**parentVdbId** | **String** | The ID of the parent VDB. This is mutually exclusive with parent_dsource_id. |  [optional] |
+|**parentDsourceId** | **String** | The ID of the parent dSource. This is mutually exclusive with parent_vdb_id. |  [optional] |
+|**sourceVdbId** | **String** | The ID of the source VDB. This is mutually exclusive with source_dsource_id. |  [optional] |
+|**sourceDsourceId** | **String** | The ID of the source dSource. This is mutually exclusive with source_vdb_id. |  [optional] |
 |**sourceDataTimestamp** | **OffsetDateTime** | The timestamp on the root ancestor timeflow from which this timeflow originated. This logical time acts as reference to the origin source data. |  [optional] |
 |**oracleIncarnationId** | **String** | Oracle-specific incarnation identifier for this timeflow. |  [optional] |
 |**oracleCdbTimeflowId** | **String** | A reference to the mirror CDB timeflow if this is a timeflow for a PDB. |  [optional] |

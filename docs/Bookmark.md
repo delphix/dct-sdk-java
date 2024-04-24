@@ -21,8 +21,10 @@ A Data Control Tower object that references points in time for one or more datas
 |**replicatedDataset** | **Boolean** | Whether this bookmark is created from a replicated dataset or not. |  [optional] |
 |**bookmarkSource** | [**BookmarkSourceEnum**](#BookmarkSourceEnum) | Source of the bookmark, default is DCT. In case of self-service bookmarks, this value would be ENGINE. |  [optional] |
 |**bookmarkStatus** | [**BookmarkStatusEnum**](#BookmarkStatusEnum) | Status of the bookmark. It can have INACTIVE value for engine bookmarks only. If this value is INACTIVE then ss_bookmark_errors would have the list of associated errors. |  [optional] |
+|**ssDataLayoutId** | **String** | Data-layout Id for engine-managed bookmarks. |  [optional] |
 |**ssBookmarkReference** | **String** | Engine reference of the self-service bookmark. |  [optional] |
 |**ssBookmarkErrors** | **List&lt;String&gt;** | List of errors if any, during bookmark creation in DCT from self-service. |  [optional] |
+|**bookmarkType** | [**BookmarkTypeEnum**](#BookmarkTypeEnum) | Type of the bookmark, either PUBLIC or PRIVATE. |  [optional] |
 |**tags** | [**List&lt;Tag&gt;**](Tag.md) | The tags to be created for this Bookmark. |  [optional] |
 
 
@@ -42,6 +44,15 @@ A Data Control Tower object that references points in time for one or more datas
 |---- | -----|
 | ACTIVE | &quot;ACTIVE&quot; |
 | INACTIVE | &quot;INACTIVE&quot; |
+
+
+
+## Enum: BookmarkTypeEnum
+
+| Name | Value |
+|---- | -----|
+| PUBLIC | &quot;PUBLIC&quot; |
+| PRIVATE | &quot;PRIVATE&quot; |
 
 
 
