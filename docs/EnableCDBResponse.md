@@ -1,6 +1,6 @@
 
 
-# SetAlgorithmPrimaryRevisionResponse
+# EnableCDBResponse
 
 
 ## Properties

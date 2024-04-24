@@ -6,6 +6,8 @@ All URIs are relative to */v3*
 |------------- | ------------- | -------------|
 | [**createCdbTags**](CdbsApi.md#createCdbTags) | **POST** /cdbs/{cdbId}/tags | Create tags for a CDB. |
 | [**deleteCdbTags**](CdbsApi.md#deleteCdbTags) | **POST** /cdbs/{cdbId}/tags/delete | Delete tags for a CDB. |
+| [**disableCdb**](CdbsApi.md#disableCdb) | **POST** /cdbs/{cdbId}/disable | Disable a CDB. |
+| [**enableCdb**](CdbsApi.md#enableCdb) | **POST** /cdbs/{cdbId}/enable | Enable a CDB. |
 | [**getCdbById**](CdbsApi.md#getCdbById) | **GET** /cdbs/{cdbId} | Get a CDB by ID (Oracle only). |
 | [**getCdbs**](CdbsApi.md#getCdbs) | **GET** /cdbs | List all CDBs (Oracle only). |
 | [**getTagsCdb**](CdbsApi.md#getTagsCdb) | **GET** /cdbs/{cdbId}/tags | Get tags for a CDB. |
@@ -69,7 +71,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -137,7 +139,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -148,6 +150,144 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+
+<a id="disableCdb"></a>
+# **disableCdb**
+> DisableCDBResponse disableCdb(cdbId, disableCDBParameters)
+
+Disable a CDB.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.CdbsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    CdbsApi apiInstance = new CdbsApi(defaultClient);
+    String cdbId = "cdbId_example"; // String | The ID of the CDB.
+    DisableCDBParameters disableCDBParameters = new DisableCDBParameters(); // DisableCDBParameters | The parameters to disable a CDB.
+    try {
+      DisableCDBResponse result = apiInstance.disableCdb(cdbId, disableCDBParameters);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CdbsApi#disableCdb");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **cdbId** | **String**| The ID of the CDB. | |
+| **disableCDBParameters** | [**DisableCDBParameters**](DisableCDBParameters.md)| The parameters to disable a CDB. | [optional] |
+
+### Return type
+
+[**DisableCDBResponse**](DisableCDBResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | CDB disable initiated. |  -  |
+
+<a id="enableCdb"></a>
+# **enableCdb**
+> EnableCDBResponse enableCdb(cdbId, enableCDBParameters)
+
+Enable a CDB.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.CdbsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    CdbsApi apiInstance = new CdbsApi(defaultClient);
+    String cdbId = "cdbId_example"; // String | The ID of the CDB.
+    EnableCDBParameters enableCDBParameters = new EnableCDBParameters(); // EnableCDBParameters | The parameters to enable a CDB.
+    try {
+      EnableCDBResponse result = apiInstance.enableCdb(cdbId, enableCDBParameters);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CdbsApi#enableCdb");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **cdbId** | **String**| The ID of the CDB. | |
+| **enableCDBParameters** | [**EnableCDBParameters**](EnableCDBParameters.md)| The parameters to enable a CDB. | [optional] |
+
+### Return type
+
+[**EnableCDBResponse**](EnableCDBResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | CDB enable initiated. |  -  |
 
 <a id="getCdbById"></a>
 # **getCdbById**
@@ -204,7 +344,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -275,7 +415,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -342,7 +482,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -415,7 +555,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

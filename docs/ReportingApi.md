@@ -10,6 +10,7 @@ All URIs are relative to */v3*
 | [**deleteReportingScheduleTag**](ReportingApi.md#deleteReportingScheduleTag) | **POST** /reporting/schedule/{reportId}/tags/delete | Delete tags for a report schedule. |
 | [**getApiUsageReport**](ReportingApi.md#getApiUsageReport) | **GET** /reporting/api-usage-report | Gets the report of API usage metrics over a given time period. This API returns at the most 10000 results in the response to protect against the server running out of memory. Users might not hit this limit with the default report without any &#39;apiUsageReportGroupByParam&#39; param but can hit this limit if the groupBy is by too granular like by &#39;client_name&#39; or &#39;user_agent&#39; only. Hence it is advisable to use startDate and endDate to &#39;limit&#39; the scope of the report. |
 | [**getAuditLogsSummaryReport**](ReportingApi.md#getAuditLogsSummaryReport) | **GET** /reporting/audit-logs-summary-report | Gets the audit log summary report. |
+| [**getDataRiskReport**](ReportingApi.md#getDataRiskReport) | **GET** /reporting/data-risk-report | Get the masking data risk report. |
 | [**getDsourceConsumptionReport**](ReportingApi.md#getDsourceConsumptionReport) | **GET** /reporting/dsource-consumption-report | Gets the consumption report for virtualization engine dSources. |
 | [**getDsourceUsageReport**](ReportingApi.md#getDsourceUsageReport) | **GET** /reporting/dsource-usage-report | Gets the usage report for virtualization engine dSources. |
 | [**getEngineGlobalObjectStateReport**](ReportingApi.md#getEngineGlobalObjectStateReport) | **GET** /reporting/engine-global-object-state-report | Get the masking engine global object state report. |
@@ -21,6 +22,7 @@ All URIs are relative to */v3*
 | [**getReportingSchedules**](ReportingApi.md#getReportingSchedules) | **GET** /reporting/schedule | List all report schedules. |
 | [**getVdbInventoryReport**](ReportingApi.md#getVdbInventoryReport) | **GET** /reporting/vdb-inventory-report | Gets the inventory report for virtualization engine VDBs. |
 | [**getVirtualizationStorageSummaryReport**](ReportingApi.md#getVirtualizationStorageSummaryReport) | **GET** /reporting/virtualization-storage-summary-report | Gets the storage summary report for virtualization engines. |
+| [**searchDataRiskReport**](ReportingApi.md#searchDataRiskReport) | **POST** /reporting/data-risk-report/search | Search the masking data risk report. |
 | [**searchDsourceConsumptionReport**](ReportingApi.md#searchDsourceConsumptionReport) | **POST** /reporting/dsource-consumption-report/search | Search the consumption report for virtualization engine DSources. |
 | [**searchDsourceUsageReport**](ReportingApi.md#searchDsourceUsageReport) | **POST** /reporting/dsource-usage-report/search | Search the usage report for virtualization engine dSources. |
 | [**searchEngineGlobalObjectStateReport**](ReportingApi.md#searchEngineGlobalObjectStateReport) | **POST** /reporting/engine-global-object-state-report/search | Search the masking engine global object state report. |
@@ -89,7 +91,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -158,7 +160,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -224,7 +226,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -292,7 +294,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -332,8 +334,8 @@ public class Example {
     //ApiKeyAuth.setApiKeyPrefix("Token");
 
     ReportingApi apiInstance = new ReportingApi(defaultClient);
-    OffsetDateTime startDate = OffsetDateTime.parse("2022-05-29T15:00:00-04:00"); // OffsetDateTime | Report start date/time. Defaults to first API request.
-    OffsetDateTime endDate = OffsetDateTime.parse("2022-06-07T15:10:00-04:00"); // OffsetDateTime | Report end date/time. Defaults to current time.
+    OffsetDateTime startDate = OffsetDateTime.parse("2022-05-29T19:00:00Z"); // OffsetDateTime | Report start date/time. Defaults to first API request.
+    OffsetDateTime endDate = OffsetDateTime.parse("2022-06-07T19:10:00Z"); // OffsetDateTime | Report end date/time. Defaults to current time.
     String apiMetricKind = "automation"; // String | Restrict the list to API usage metric of the given kind
     List<String> groupBy = Arrays.asList(); // List<String> | The field to group results by.
     List<String> clientName = Arrays.asList(); // List<String> | The Client names to be included in the report.
@@ -371,7 +373,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -442,7 +444,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -453,6 +455,77 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of aggregated audit log entries for each account. |  -  |
+
+<a id="getDataRiskReport"></a>
+# **getDataRiskReport**
+> GetDataRiskReportResponse getDataRiskReport(limit, cursor, sort)
+
+Get the masking data risk report.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.ReportingApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    ReportingApi apiInstance = new ReportingApi(defaultClient);
+    Integer limit = 10000; // Integer | Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000.
+    String cursor = "cursor_example"; // String | Cursor to fetch the next or previous page of results. The value of this property must be extracted from the 'prev_cursor' or 'next_cursor' property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints.
+    String sort = "connector_id"; // String | The field to sort results by. A property name with a prepended '-' signifies descending order.
+    try {
+      GetDataRiskReportResponse result = apiInstance.getDataRiskReport(limit, cursor, sort);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReportingApi#getDataRiskReport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000. | [optional] [default to 10000] |
+| **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
+| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: connector_id, -connector_id, engine_connector_id, -engine_connector_id, connector_name, -connector_name, connector_type, -connector_type, last_profiled_date, -last_profiled_date, last_masked_date, -last_masked_date, engine_id, -engine_id, engine_name, -engine_name, is_profiled, -is_profiled, is_sensitive_data, -is_sensitive_data, is_masked, -is_masked, is_at_risk, -is_at_risk, data_elements_total, -data_elements_total, data_elements_not_sensitive, -data_elements_not_sensitive, data_elements_sensitive_masked, -data_elements_sensitive_masked, data_elements_sensitive_unmasked, -data_elements_sensitive_unmasked, records_total, -records_total, records_not_sensitive, -records_not_sensitive, records_sensitive_masked, -records_sensitive_masked, records_sensitive_unmasked, -records_sensitive_unmasked] |
+
+### Return type
+
+[**GetDataRiskReportResponse**](GetDataRiskReportResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/csv
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of DataRisk data. |  -  |
 
 <a id="getDsourceConsumptionReport"></a>
 # **getDsourceConsumptionReport**
@@ -513,7 +586,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -584,7 +657,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -655,7 +728,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -726,7 +799,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -797,7 +870,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -860,7 +933,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -927,7 +1000,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -994,7 +1067,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1065,7 +1138,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1136,7 +1209,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1199,7 +1272,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000. | [optional] [default to 10000] |
 | **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
-| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: engine_id, -engine_id, engine_name, -engine_name, engine_hostname, -engine_hostname, total_capacity, -total_capacity, free_storage, -free_storage, used_storage, -used_storage, used_percentage, -used_percentage, dsource_count, -dsource_count, vdb_count, -vdb_count, total_object_count, -total_object_count] |
+| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: engine_id, -engine_id, engine_name, -engine_name, engine_hostname, -engine_hostname, total_capacity, -total_capacity, free_storage, -free_storage, used_storage, -used_storage, used_percentage, -used_percentage, dsource_count, -dsource_count, vdb_count, -vdb_count, total_object_count, -total_object_count, reserved_storage, -reserved_storage, dsource_used_storage, -dsource_used_storage, vdb_used_storage, -vdb_used_storage] |
 
 ### Return type
 
@@ -1207,7 +1280,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1218,6 +1291,79 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of storage summary data of virtualization engines. |  -  |
+
+<a id="searchDataRiskReport"></a>
+# **searchDataRiskReport**
+> SearchDataRiskReportResponse searchDataRiskReport(limit, cursor, sort, searchBody)
+
+Search the masking data risk report.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.ReportingApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    ReportingApi apiInstance = new ReportingApi(defaultClient);
+    Integer limit = 10000; // Integer | Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000.
+    String cursor = "cursor_example"; // String | Cursor to fetch the next or previous page of results. The value of this property must be extracted from the 'prev_cursor' or 'next_cursor' property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints.
+    String sort = "connector_id"; // String | The field to sort results by. A property name with a prepended '-' signifies descending order.
+    SearchBody searchBody = new SearchBody(); // SearchBody | A request body containing a filter expression. This enables searching for items matching arbitrarily complex conditions. The list of attributes which can be used in filter expressions is available in the x-filterable vendor extension.  # Filter Expression Overview **Note: All keywords are case-insensitive**  ## Comparison Operators | Operator | Description | Example | | --- | --- | --- | | CONTAINS | Substring or membership testing for string and list attributes respectively. | field3 CONTAINS 'foobar', field4 CONTAINS TRUE  | | IN | Tests if field is a member of a list literal. List can contain a maximum of 100 values | field2 IN ['Goku', 'Vegeta'] | | GE | Tests if a field is greater than or equal to a literal value | field1 GE 1.2e-2 | | GT | Tests if a field is greater than a literal value | field1 GT 1.2e-2 | | LE | Tests if a field is less than or equal to a literal value | field1 LE 9000 | | LT | Tests if a field is less than a literal value | field1 LT 9.02 | | NE | Tests if a field is not equal to a literal value | field1 NE 42 | | EQ | Tests if a field is equal to a literal value | field1 EQ 42 |  ## Search Operator The SEARCH operator filters for items which have any filterable attribute that contains the input string as a substring, comparison is done case-insensitively. This is not restricted to attributes with string values. Specifically `SEARCH '12'` would match an item with an attribute with an integer value of `123`.  ## Logical Operators Ordered by precedence. | Operator | Description | Example | | --- | --- | --- | | NOT | Logical NOT (Right associative) | NOT field1 LE 9000 | | AND | Logical AND (Left Associative) | field1 GT 9000 AND field2 EQ 'Goku' | | OR | Logical OR (Left Associative) | field1 GT 9000 OR field2 EQ 'Goku' |  ## Grouping Parenthesis `()` can be used to override operator precedence.  For example: NOT (field1 LT 1234 AND field2 CONTAINS 'foo')  ## Literal Values | Literal      | Description | Examples | | --- | --- | --- | | Nil | Represents the absence of a value | nil, Nil, nIl, NIL | | Boolean | true/false boolean | true, false, True, False, TRUE, FALSE | | Number | Signed integer and floating point numbers. Also supports scientific notation. | 0, 1, -1, 1.2, 0.35, 1.2e-2, -1.2e+2 | | String | Single or double quoted | \"foo\", \"bar\", \"foo bar\", 'foo', 'bar', 'foo bar' | | Datetime | Formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) | 2018-04-27T18:39:26.397237+00:00 | | List | Comma-separated literals wrapped in square brackets | [0], [0, 1], ['foo', \"bar\"] |  ## Limitations - A maximum of 8 unique identifiers may be used inside a filter expression. 
+    try {
+      SearchDataRiskReportResponse result = apiInstance.searchDataRiskReport(limit, cursor, sort, searchBody);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReportingApi#searchDataRiskReport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000. | [optional] [default to 10000] |
+| **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
+| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: connector_id, -connector_id, engine_connector_id, -engine_connector_id, connector_name, -connector_name, connector_type, -connector_type, last_profiled_date, -last_profiled_date, last_masked_date, -last_masked_date, engine_id, -engine_id, engine_name, -engine_name, is_profiled, -is_profiled, is_sensitive_data, -is_sensitive_data, is_masked, -is_masked, is_at_risk, -is_at_risk, data_elements_total, -data_elements_total, data_elements_not_sensitive, -data_elements_not_sensitive, data_elements_sensitive_masked, -data_elements_sensitive_masked, data_elements_sensitive_unmasked, -data_elements_sensitive_unmasked, records_total, -records_total, records_not_sensitive, -records_not_sensitive, records_sensitive_masked, -records_sensitive_masked, records_sensitive_unmasked, -records_sensitive_unmasked] |
+| **searchBody** | [**SearchBody**](SearchBody.md)| A request body containing a filter expression. This enables searching for items matching arbitrarily complex conditions. The list of attributes which can be used in filter expressions is available in the x-filterable vendor extension.  # Filter Expression Overview **Note: All keywords are case-insensitive**  ## Comparison Operators | Operator | Description | Example | | --- | --- | --- | | CONTAINS | Substring or membership testing for string and list attributes respectively. | field3 CONTAINS &#39;foobar&#39;, field4 CONTAINS TRUE  | | IN | Tests if field is a member of a list literal. List can contain a maximum of 100 values | field2 IN [&#39;Goku&#39;, &#39;Vegeta&#39;] | | GE | Tests if a field is greater than or equal to a literal value | field1 GE 1.2e-2 | | GT | Tests if a field is greater than a literal value | field1 GT 1.2e-2 | | LE | Tests if a field is less than or equal to a literal value | field1 LE 9000 | | LT | Tests if a field is less than a literal value | field1 LT 9.02 | | NE | Tests if a field is not equal to a literal value | field1 NE 42 | | EQ | Tests if a field is equal to a literal value | field1 EQ 42 |  ## Search Operator The SEARCH operator filters for items which have any filterable attribute that contains the input string as a substring, comparison is done case-insensitively. This is not restricted to attributes with string values. Specifically &#x60;SEARCH &#39;12&#39;&#x60; would match an item with an attribute with an integer value of &#x60;123&#x60;.  ## Logical Operators Ordered by precedence. | Operator | Description | Example | | --- | --- | --- | | NOT | Logical NOT (Right associative) | NOT field1 LE 9000 | | AND | Logical AND (Left Associative) | field1 GT 9000 AND field2 EQ &#39;Goku&#39; | | OR | Logical OR (Left Associative) | field1 GT 9000 OR field2 EQ &#39;Goku&#39; |  ## Grouping Parenthesis &#x60;()&#x60; can be used to override operator precedence.  For example: NOT (field1 LT 1234 AND field2 CONTAINS &#39;foo&#39;)  ## Literal Values | Literal      | Description | Examples | | --- | --- | --- | | Nil | Represents the absence of a value | nil, Nil, nIl, NIL | | Boolean | true/false boolean | true, false, True, False, TRUE, FALSE | | Number | Signed integer and floating point numbers. Also supports scientific notation. | 0, 1, -1, 1.2, 0.35, 1.2e-2, -1.2e+2 | | String | Single or double quoted | \&quot;foo\&quot;, \&quot;bar\&quot;, \&quot;foo bar\&quot;, &#39;foo&#39;, &#39;bar&#39;, &#39;foo bar&#39; | | Datetime | Formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) | 2018-04-27T18:39:26.397237+00:00 | | List | Comma-separated literals wrapped in square brackets | [0], [0, 1], [&#39;foo&#39;, \&quot;bar\&quot;] |  ## Limitations - A maximum of 8 unique identifiers may be used inside a filter expression.  | [optional] |
+
+### Return type
+
+[**SearchDataRiskReportResponse**](SearchDataRiskReportResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/csv
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of searched DataRisk data. |  -  |
 
 <a id="searchDsourceConsumptionReport"></a>
 # **searchDsourceConsumptionReport**
@@ -1280,7 +1426,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1353,7 +1499,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1426,7 +1572,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1499,7 +1645,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1572,7 +1718,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1645,7 +1791,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1718,7 +1864,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1782,7 +1928,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000. | [optional] [default to 10000] |
 | **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
-| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: dependant_vdbs, -dependant_vdbs, unvirtualized_space, -unvirtualized_space, virtualized_space, -virtualized_space, name, -name, engine_name, -engine_name, dsource_id, -dsource_id, estimated_savings, -estimated_savings, estimated_savings_perc, -estimated_savings_perc] |
+| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: dependant_vdbs, -dependant_vdbs, unvirtualized_space, -unvirtualized_space, current_timeflows_unvirtualized_space, -current_timeflows_unvirtualized_space, virtualized_space, -virtualized_space, name, -name, engine_name, -engine_name, dsource_id, -dsource_id, estimated_savings, -estimated_savings, estimated_savings_perc, -estimated_savings_perc, estimated_current_timeflows_savings, -estimated_current_timeflows_savings, estimated_current_timeflows_savings_perc, -estimated_current_timeflows_savings_perc] |
 | **searchBody** | [**SearchBody**](SearchBody.md)| A request body containing a filter expression. This enables searching for items matching arbitrarily complex conditions. The list of attributes which can be used in filter expressions is available in the x-filterable vendor extension.  # Filter Expression Overview **Note: All keywords are case-insensitive**  ## Comparison Operators | Operator | Description | Example | | --- | --- | --- | | CONTAINS | Substring or membership testing for string and list attributes respectively. | field3 CONTAINS &#39;foobar&#39;, field4 CONTAINS TRUE  | | IN | Tests if field is a member of a list literal. List can contain a maximum of 100 values | field2 IN [&#39;Goku&#39;, &#39;Vegeta&#39;] | | GE | Tests if a field is greater than or equal to a literal value | field1 GE 1.2e-2 | | GT | Tests if a field is greater than a literal value | field1 GT 1.2e-2 | | LE | Tests if a field is less than or equal to a literal value | field1 LE 9000 | | LT | Tests if a field is less than a literal value | field1 LT 9.02 | | NE | Tests if a field is not equal to a literal value | field1 NE 42 | | EQ | Tests if a field is equal to a literal value | field1 EQ 42 |  ## Search Operator The SEARCH operator filters for items which have any filterable attribute that contains the input string as a substring, comparison is done case-insensitively. This is not restricted to attributes with string values. Specifically &#x60;SEARCH &#39;12&#39;&#x60; would match an item with an attribute with an integer value of &#x60;123&#x60;.  ## Logical Operators Ordered by precedence. | Operator | Description | Example | | --- | --- | --- | | NOT | Logical NOT (Right associative) | NOT field1 LE 9000 | | AND | Logical AND (Left Associative) | field1 GT 9000 AND field2 EQ &#39;Goku&#39; | | OR | Logical OR (Left Associative) | field1 GT 9000 OR field2 EQ &#39;Goku&#39; |  ## Grouping Parenthesis &#x60;()&#x60; can be used to override operator precedence.  For example: NOT (field1 LT 1234 AND field2 CONTAINS &#39;foo&#39;)  ## Literal Values | Literal      | Description | Examples | | --- | --- | --- | | Nil | Represents the absence of a value | nil, Nil, nIl, NIL | | Boolean | true/false boolean | true, false, True, False, TRUE, FALSE | | Number | Signed integer and floating point numbers. Also supports scientific notation. | 0, 1, -1, 1.2, 0.35, 1.2e-2, -1.2e+2 | | String | Single or double quoted | \&quot;foo\&quot;, \&quot;bar\&quot;, \&quot;foo bar\&quot;, &#39;foo&#39;, &#39;bar&#39;, &#39;foo bar&#39; | | Datetime | Formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) | 2018-04-27T18:39:26.397237+00:00 | | List | Comma-separated literals wrapped in square brackets | [0], [0, 1], [&#39;foo&#39;, \&quot;bar\&quot;] |  ## Limitations - A maximum of 8 unique identifiers may be used inside a filter expression.  | [optional] |
 
 ### Return type
@@ -1791,7 +1937,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1864,7 +2010,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1928,7 +2074,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 10000. | [optional] [default to 10000] |
 | **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
-| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: engine_id, -engine_id, engine_name, -engine_name, engine_hostname, -engine_hostname, total_capacity, -total_capacity, free_storage, -free_storage, used_storage, -used_storage, used_percentage, -used_percentage, dsource_count, -dsource_count, vdb_count, -vdb_count, total_object_count, -total_object_count] |
+| **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: engine_id, -engine_id, engine_name, -engine_name, engine_hostname, -engine_hostname, total_capacity, -total_capacity, free_storage, -free_storage, used_storage, -used_storage, used_percentage, -used_percentage, dsource_count, -dsource_count, vdb_count, -vdb_count, total_object_count, -total_object_count, reserved_storage, -reserved_storage, dsource_used_storage, -dsource_used_storage, vdb_used_storage, -vdb_used_storage] |
 | **searchBody** | [**SearchBody**](SearchBody.md)| A request body containing a filter expression. This enables searching for items matching arbitrarily complex conditions. The list of attributes which can be used in filter expressions is available in the x-filterable vendor extension.  # Filter Expression Overview **Note: All keywords are case-insensitive**  ## Comparison Operators | Operator | Description | Example | | --- | --- | --- | | CONTAINS | Substring or membership testing for string and list attributes respectively. | field3 CONTAINS &#39;foobar&#39;, field4 CONTAINS TRUE  | | IN | Tests if field is a member of a list literal. List can contain a maximum of 100 values | field2 IN [&#39;Goku&#39;, &#39;Vegeta&#39;] | | GE | Tests if a field is greater than or equal to a literal value | field1 GE 1.2e-2 | | GT | Tests if a field is greater than a literal value | field1 GT 1.2e-2 | | LE | Tests if a field is less than or equal to a literal value | field1 LE 9000 | | LT | Tests if a field is less than a literal value | field1 LT 9.02 | | NE | Tests if a field is not equal to a literal value | field1 NE 42 | | EQ | Tests if a field is equal to a literal value | field1 EQ 42 |  ## Search Operator The SEARCH operator filters for items which have any filterable attribute that contains the input string as a substring, comparison is done case-insensitively. This is not restricted to attributes with string values. Specifically &#x60;SEARCH &#39;12&#39;&#x60; would match an item with an attribute with an integer value of &#x60;123&#x60;.  ## Logical Operators Ordered by precedence. | Operator | Description | Example | | --- | --- | --- | | NOT | Logical NOT (Right associative) | NOT field1 LE 9000 | | AND | Logical AND (Left Associative) | field1 GT 9000 AND field2 EQ &#39;Goku&#39; | | OR | Logical OR (Left Associative) | field1 GT 9000 OR field2 EQ &#39;Goku&#39; |  ## Grouping Parenthesis &#x60;()&#x60; can be used to override operator precedence.  For example: NOT (field1 LT 1234 AND field2 CONTAINS &#39;foo&#39;)  ## Literal Values | Literal      | Description | Examples | | --- | --- | --- | | Nil | Represents the absence of a value | nil, Nil, nIl, NIL | | Boolean | true/false boolean | true, false, True, False, TRUE, FALSE | | Number | Signed integer and floating point numbers. Also supports scientific notation. | 0, 1, -1, 1.2, 0.35, 1.2e-2, -1.2e+2 | | String | Single or double quoted | \&quot;foo\&quot;, \&quot;bar\&quot;, \&quot;foo bar\&quot;, &#39;foo&#39;, &#39;bar&#39;, &#39;foo bar&#39; | | Datetime | Formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) | 2018-04-27T18:39:26.397237+00:00 | | List | Comma-separated literals wrapped in square brackets | [0], [0, 1], [&#39;foo&#39;, \&quot;bar\&quot;] |  ## Limitations - A maximum of 8 unique identifiers may be used inside a filter expression.  | [optional] |
 
 ### Return type
@@ -1937,7 +2083,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2006,7 +2152,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

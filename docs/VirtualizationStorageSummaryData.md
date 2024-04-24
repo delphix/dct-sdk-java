@@ -17,6 +17,9 @@
 |**dsourceCount** | **Long** | The number of dSources on the engine. |  [optional] |
 |**vdbCount** | **Long** | The number of VDBs on the engine. |  [optional] |
 |**totalObjectCount** | **Long** | The total number of dSources and VDBs on the engine. |  [optional] |
+|**reservedStorage** | **Long** | The amount of storage reversed by the engine as a safety buffer, in bytes. |  [optional] |
+|**dsourceUsedStorage** | **Long** | The amount of storage used by all dSources on the engine, in bytes. |  [optional] |
+|**vdbUsedStorage** | **Long** | The amount of storage used by all VDBs on the engine, in bytes. |  [optional] |
 
 
 

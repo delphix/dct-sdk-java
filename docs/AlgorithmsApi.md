@@ -16,7 +16,6 @@ All URIs are relative to */v3*
 | [**getAlgorithms**](AlgorithmsApi.md#getAlgorithms) | **GET** /algorithms | Retrieve the list of algorithms. |
 | [**searchAlgorithmRevisions**](AlgorithmsApi.md#searchAlgorithmRevisions) | **POST** /algorithms/{algorithmId}/revisions/search | Search for algorithm revisions. |
 | [**searchAlgorithms**](AlgorithmsApi.md#searchAlgorithms) | **POST** /algorithms/search | Search for algorithms. |
-| [**setAlgorithmPrimaryRevision**](AlgorithmsApi.md#setAlgorithmPrimaryRevision) | **POST** /algorithms/{algorithmId}/revisions/{revisionId}/make-primary | Set an algorithm revision to be the primary revision for the algorithm. |
 | [**updateAlgorithmRevision**](AlgorithmsApi.md#updateAlgorithmRevision) | **PATCH** /algorithms/{algorithmId}/revisions/{revisionId} | Update an algorithm revision |
 
 
@@ -79,7 +78,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -148,7 +147,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -218,7 +217,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -286,7 +285,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -353,7 +352,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -422,7 +421,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -491,7 +490,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -564,7 +563,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -631,7 +630,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -702,7 +701,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -777,7 +776,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -850,7 +849,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -861,75 +860,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-
-<a id="setAlgorithmPrimaryRevision"></a>
-# **setAlgorithmPrimaryRevision**
-> SetAlgorithmPrimaryRevisionResponse setAlgorithmPrimaryRevision(algorithmId, revisionId)
-
-Set an algorithm revision to be the primary revision for the algorithm.
-
-### Example
-```java
-// Import classes:
-import com.delphix.dct.ApiClient;
-import com.delphix.dct.ApiException;
-import com.delphix.dct.Configuration;
-import com.delphix.dct.auth.*;
-import com.delphix.dct.models.*;
-import com.delphix.dct.api.AlgorithmsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/v3");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    AlgorithmsApi apiInstance = new AlgorithmsApi(defaultClient);
-    String algorithmId = "algorithmId_example"; // String | The ID of the Algorithm.
-    String revisionId = "revisionId_example"; // String | The ID of the Algorithm revision.
-    try {
-      SetAlgorithmPrimaryRevisionResponse result = apiInstance.setAlgorithmPrimaryRevision(algorithmId, revisionId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AlgorithmsApi#setAlgorithmPrimaryRevision");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **algorithmId** | **String**| The ID of the Algorithm. | |
-| **revisionId** | **String**| The ID of the Algorithm revision. | |
-
-### Return type
-
-[**SetAlgorithmPrimaryRevisionResponse**](SetAlgorithmPrimaryRevisionResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Primary revision modification initiated. |  -  |
 
 <a id="updateAlgorithmRevision"></a>
 # **updateAlgorithmRevision**
@@ -990,7 +920,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -18,6 +18,7 @@ The Delphix representation of an Oracle Container Database.
 |**size** | **Long** | The total size of the data files used by this CDB, in bytes. |  [optional] |
 |**jdbcConnectionString** | **String** | The JDBC connection URL for this CDB. |  [optional] |
 |**engineId** | **String** | A reference to the Engine that this CDB belongs to. |  [optional] |
+|**isLinked** | **Boolean** | Whether this CDB is linked or not. |  [optional] |
 |**tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  [optional] |
 
 

@@ -20,6 +20,9 @@
 |**aseDbHashicorpVaultUsernameKey** | **String** | Key for the username in the key-value store. |  [optional] |
 |**aseDbHashicorpVaultSecretKey** | **String** | Key for the password in the key-value store. |  [optional] |
 |**aseDbCyberarkVaultQueryString** | **String** | Query to find a credential in the CyberArk vault. |  [optional] |
+|**aseDbAzureVaultName** | **String** | Azure key vault name. |  [optional] |
+|**aseDbAzureVaultUsernameKey** | **String** | Azure vault key for the username in the key-value store. |  [optional] |
+|**aseDbAzureVaultSecretKey** | **String** | Azure vault key for the password in the key-value store. |  [optional] |
 |**aseDbUseKerberosAuthentication** | **Boolean** | Whether to use kerberos authentication for ASE DB discovery. |  [optional] |
 |**description** | **String** | The environment description. |  [optional] |
 

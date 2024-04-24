@@ -86,7 +86,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -426,7 +426,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -493,7 +493,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -560,7 +560,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -631,7 +631,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ public class Example {
 | **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 100. | [optional] [default to 100] |
 | **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
 | **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: id, -id, database_type, -database_type, name, -name, database_version, -database_version, data_uuid, -data_uuid, storage_size, -storage_size, plugin_version, -plugin_version, creation_date, -creation_date, group_name, -group_name, enabled, -enabled, engine_id, -engine_id, source_id, -source_id, status, -status, engine_name, -engine_name, primary_object_id, -primary_object_id, primary_engine_id, -primary_engine_id, primary_engine_name, -primary_engine_name, sync_policy_id, -sync_policy_id, retention_policy_id, -retention_policy_id, quota_policy_id, -quota_policy_id] |
-| **permission** | [**PermissionEnum**](.md)| Restrict the objects, which are allowed. | [optional] [enum: READ, UPDATE, DELETE, EXECUTE, CANCEL, MIGRATE, REFRESH, DISABLE, ENABLE, ABANDON, VALIDATE, START, STOP, SNAPSHOT, COPY, REMOVE_JOB, PASSWORD_RESET, UNDO_IMPORT, IMPORT, PROVISION_FROM_BOOKMARK, PROVISION, REFRESH_FROM_BOOKMARK, REFRESH_FROM_SNAPSHOT, REFRESH_FROM_TIMESTAMP, CREATE_ENVIRONMENT, CREATE_BOOKMARK, CREATE_VDBGROUP, MANAGE_TAGS, LINK] |
+| **permission** | [**PermissionEnum**](.md)| Restrict the objects, which are allowed. | [optional] [enum: READ, UPDATE, DELETE, EXECUTE, CANCEL, MIGRATE, REFRESH, DISABLE, ENABLE, ABANDON, VALIDATE, START, STOP, SNAPSHOT, COPY, REMOVE_JOB, PASSWORD_RESET, UNDO_IMPORT, IMPORT, PROVISION_FROM_BOOKMARK, PROVISION, REFRESH_FROM_BOOKMARK, REFRESH_FROM_SNAPSHOT, REFRESH_FROM_TIMESTAMP, CREATE_ENVIRONMENT, CREATE_BOOKMARK, CREATE_VDBGROUP, MANAGE_TAGS, LINK, REPLICATE, REPLICATE_TO, DELETE_BOOKMARK, UPDATE_BOOKMARK, READ_BOOKMARK, CONFIGURE_PREDEFINED_AUTO_TAGGING] |
 
 ### Return type
 
@@ -704,7 +704,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -771,7 +771,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -838,7 +838,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -905,7 +905,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -972,7 +972,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1039,7 +1039,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1106,7 +1106,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1173,7 +1173,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1240,7 +1240,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1307,7 +1307,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1374,7 +1374,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1441,7 +1441,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1507,7 +1507,7 @@ public class Example {
 | **limit** | **Integer**| Maximum number of objects to return per query. The value must be between 1 and 1000. Default is 100. | [optional] [default to 100] |
 | **cursor** | **String**| Cursor to fetch the next or previous page of results. The value of this property must be extracted from the &#39;prev_cursor&#39; or &#39;next_cursor&#39; property of a PaginatedResponseMetadata which is contained in the response of list and search API endpoints. | [optional] |
 | **sort** | **String**| The field to sort results by. A property name with a prepended &#39;-&#39; signifies descending order. | [optional] [enum: id, -id, database_type, -database_type, name, -name, database_version, -database_version, data_uuid, -data_uuid, storage_size, -storage_size, plugin_version, -plugin_version, creation_date, -creation_date, group_name, -group_name, enabled, -enabled, engine_id, -engine_id, source_id, -source_id, status, -status, engine_name, -engine_name, primary_object_id, -primary_object_id, primary_engine_id, -primary_engine_id, primary_engine_name, -primary_engine_name, sync_policy_id, -sync_policy_id, retention_policy_id, -retention_policy_id, quota_policy_id, -quota_policy_id] |
-| **permission** | [**PermissionEnum**](.md)| Restrict the objects, which are allowed. | [optional] [enum: READ, UPDATE, DELETE, EXECUTE, CANCEL, MIGRATE, REFRESH, DISABLE, ENABLE, ABANDON, VALIDATE, START, STOP, SNAPSHOT, COPY, REMOVE_JOB, PASSWORD_RESET, UNDO_IMPORT, IMPORT, PROVISION_FROM_BOOKMARK, PROVISION, REFRESH_FROM_BOOKMARK, REFRESH_FROM_SNAPSHOT, REFRESH_FROM_TIMESTAMP, CREATE_ENVIRONMENT, CREATE_BOOKMARK, CREATE_VDBGROUP, MANAGE_TAGS, LINK] |
+| **permission** | [**PermissionEnum**](.md)| Restrict the objects, which are allowed. | [optional] [enum: READ, UPDATE, DELETE, EXECUTE, CANCEL, MIGRATE, REFRESH, DISABLE, ENABLE, ABANDON, VALIDATE, START, STOP, SNAPSHOT, COPY, REMOVE_JOB, PASSWORD_RESET, UNDO_IMPORT, IMPORT, PROVISION_FROM_BOOKMARK, PROVISION, REFRESH_FROM_BOOKMARK, REFRESH_FROM_SNAPSHOT, REFRESH_FROM_TIMESTAMP, CREATE_ENVIRONMENT, CREATE_BOOKMARK, CREATE_VDBGROUP, MANAGE_TAGS, LINK, REPLICATE, REPLICATE_TO, DELETE_BOOKMARK, UPDATE_BOOKMARK, READ_BOOKMARK, CONFIGURE_PREDEFINED_AUTO_TAGGING] |
 | **searchBody** | [**SearchBody**](SearchBody.md)| A request body containing a filter expression. This enables searching for items matching arbitrarily complex conditions. The list of attributes which can be used in filter expressions is available in the x-filterable vendor extension.  # Filter Expression Overview **Note: All keywords are case-insensitive**  ## Comparison Operators | Operator | Description | Example | | --- | --- | --- | | CONTAINS | Substring or membership testing for string and list attributes respectively. | field3 CONTAINS &#39;foobar&#39;, field4 CONTAINS TRUE  | | IN | Tests if field is a member of a list literal. List can contain a maximum of 100 values | field2 IN [&#39;Goku&#39;, &#39;Vegeta&#39;] | | GE | Tests if a field is greater than or equal to a literal value | field1 GE 1.2e-2 | | GT | Tests if a field is greater than a literal value | field1 GT 1.2e-2 | | LE | Tests if a field is less than or equal to a literal value | field1 LE 9000 | | LT | Tests if a field is less than a literal value | field1 LT 9.02 | | NE | Tests if a field is not equal to a literal value | field1 NE 42 | | EQ | Tests if a field is equal to a literal value | field1 EQ 42 |  ## Search Operator The SEARCH operator filters for items which have any filterable attribute that contains the input string as a substring, comparison is done case-insensitively. This is not restricted to attributes with string values. Specifically &#x60;SEARCH &#39;12&#39;&#x60; would match an item with an attribute with an integer value of &#x60;123&#x60;.  ## Logical Operators Ordered by precedence. | Operator | Description | Example | | --- | --- | --- | | NOT | Logical NOT (Right associative) | NOT field1 LE 9000 | | AND | Logical AND (Left Associative) | field1 GT 9000 AND field2 EQ &#39;Goku&#39; | | OR | Logical OR (Left Associative) | field1 GT 9000 OR field2 EQ &#39;Goku&#39; |  ## Grouping Parenthesis &#x60;()&#x60; can be used to override operator precedence.  For example: NOT (field1 LT 1234 AND field2 CONTAINS &#39;foo&#39;)  ## Literal Values | Literal      | Description | Examples | | --- | --- | --- | | Nil | Represents the absence of a value | nil, Nil, nIl, NIL | | Boolean | true/false boolean | true, false, True, False, TRUE, FALSE | | Number | Signed integer and floating point numbers. Also supports scientific notation. | 0, 1, -1, 1.2, 0.35, 1.2e-2, -1.2e+2 | | String | Single or double quoted | \&quot;foo\&quot;, \&quot;bar\&quot;, \&quot;foo bar\&quot;, &#39;foo&#39;, &#39;bar&#39;, &#39;foo bar&#39; | | Datetime | Formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) | 2018-04-27T18:39:26.397237+00:00 | | List | Comma-separated literals wrapped in square brackets | [0], [0, 1], [&#39;foo&#39;, \&quot;bar\&quot;] |  ## Limitations - A maximum of 8 unique identifiers may be used inside a filter expression.  | [optional] |
 
 ### Return type
@@ -1516,7 +1516,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1585,7 +1585,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

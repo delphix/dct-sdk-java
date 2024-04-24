@@ -6,6 +6,8 @@ All URIs are relative to */v3*
 |------------- | ------------- | -------------|
 | [**createVcdbTags**](VcdbsApi.md#createVcdbTags) | **POST** /vcdbs/{vcdbId}/tags | Create tags for a vCDB. |
 | [**deleteVcdbTags**](VcdbsApi.md#deleteVcdbTags) | **POST** /vcdbs/{vcdbId}/tags/delete | Delete tags for a vCDB. |
+| [**disableVcdb**](VcdbsApi.md#disableVcdb) | **POST** /vcdbs/{vcdbId}/disable | Disable a vCDB. |
+| [**enableVcdb**](VcdbsApi.md#enableVcdb) | **POST** /vcdbs/{vcdbId}/enable | Enable a vCDB. |
 | [**getTagsVcdb**](VcdbsApi.md#getTagsVcdb) | **GET** /vcdbs/{vcdbId}/tags | Get tags for a vCDB. |
 | [**getVcdbById**](VcdbsApi.md#getVcdbById) | **GET** /vcdbs/{vcdbId} | Get a CDB by ID (Oracle only). |
 | [**getVcdbs**](VcdbsApi.md#getVcdbs) | **GET** /vcdbs | List all vCDBs (Oracle only). |
@@ -69,7 +71,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -137,7 +139,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -148,6 +150,144 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+
+<a id="disableVcdb"></a>
+# **disableVcdb**
+> DisableVCDBResponse disableVcdb(vcdbId, disableVCDBParameters)
+
+Disable a vCDB.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.VcdbsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    VcdbsApi apiInstance = new VcdbsApi(defaultClient);
+    String vcdbId = "vcdbId_example"; // String | The ID of the vCDB.
+    DisableVCDBParameters disableVCDBParameters = new DisableVCDBParameters(); // DisableVCDBParameters | The parameters to disable a vCDB.
+    try {
+      DisableVCDBResponse result = apiInstance.disableVcdb(vcdbId, disableVCDBParameters);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling VcdbsApi#disableVcdb");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **vcdbId** | **String**| The ID of the vCDB. | |
+| **disableVCDBParameters** | [**DisableVCDBParameters**](DisableVCDBParameters.md)| The parameters to disable a vCDB. | [optional] |
+
+### Return type
+
+[**DisableVCDBResponse**](DisableVCDBResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | vCDB disable initiated. |  -  |
+
+<a id="enableVcdb"></a>
+# **enableVcdb**
+> EnableVCDBResponse enableVcdb(vcdbId, enableVCDBParameters)
+
+Enable a vCDB.
+
+### Example
+```java
+// Import classes:
+import com.delphix.dct.ApiClient;
+import com.delphix.dct.ApiException;
+import com.delphix.dct.Configuration;
+import com.delphix.dct.auth.*;
+import com.delphix.dct.models.*;
+import com.delphix.dct.api.VcdbsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("/v3");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    VcdbsApi apiInstance = new VcdbsApi(defaultClient);
+    String vcdbId = "vcdbId_example"; // String | The ID of the vCDB.
+    EnableVCDBParameters enableVCDBParameters = new EnableVCDBParameters(); // EnableVCDBParameters | The parameters to enable a vCDB.
+    try {
+      EnableVCDBResponse result = apiInstance.enableVcdb(vcdbId, enableVCDBParameters);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling VcdbsApi#enableVcdb");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **vcdbId** | **String**| The ID of the vCDB. | |
+| **enableVCDBParameters** | [**EnableVCDBParameters**](EnableVCDBParameters.md)| The parameters to enable a vCDB. | [optional] |
+
+### Return type
+
+[**EnableVCDBResponse**](EnableVCDBResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | vCDB enable initiated. |  -  |
 
 <a id="getTagsVcdb"></a>
 # **getTagsVcdb**
@@ -204,7 +344,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -271,7 +411,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -342,7 +482,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -415,7 +555,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
