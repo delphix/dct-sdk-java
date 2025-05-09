@@ -96,7 +96,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -376,7 +376,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -516,7 +516,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -583,7 +583,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -650,7 +650,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -719,7 +719,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -785,7 +785,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -856,7 +856,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -927,7 +927,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -993,7 +993,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1061,7 +1061,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1128,7 +1128,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1197,7 +1197,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1268,7 +1268,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1331,7 +1331,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1371,7 +1371,7 @@ public class Example {
     //ApiKeyAuth.setApiKeyPrefix("Token");
 
     AuthorizationApi apiInstance = new AuthorizationApi(defaultClient);
-    String objectType = "ACCESS_GROUP"; // String | The type of the DCT object.
+    String objectType = "ALGORITHM"; // String | The type of the DCT object.
     String objectId = "objectId_example"; // String | The ID of the DCT Object.
     try {
       ObjectPermissionsResponse result = apiInstance.getObjectPermissions(objectType, objectId);
@@ -1391,7 +1391,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **objectType** | **String**| The type of the DCT object. | [enum: ACCESS_GROUP, ACCOUNT, AUDIT_LOGS_SUMMARY_REPORT, ROLE, API_USAGE_REPORT, BOOKMARK, CDB, DATABASE_TEMPLATE, DSOURCE, ENGINE, ENVIRONMENT, MASKING_JOB, MASKING_ENVIRONMENT, MASKING_JOB_SET, REPORT_SCHEDULE, SOURCE, VAULT, VCDB, VDB, VDB_GROUP, CONNECTOR, CONNECTIVITY_CHECK, DSOURCE_USAGE_REPORT, DSOURCE_CONSUMPTION_REPORT, JOB, PRODUCT_INFO, SMTP_CONFIG, MASKING_EXECUTION_METRICS_REPORT, STORAGE_SUMMARY_REPORT, STORAGE_SAVINGS_SUMMARY_REPORT, VDB_INVENTORY_REPORT, LDAP, SAML, PASSWORD_POLICY, GLOBAL_PROPERTIES, SYSTEM, API_CLASSIFICATION, VIRTUALIZATION_POLICY, HYPERSCALE_INSTANCE, HYPERSCALE_CONNECTOR, HYPERSCALE_DATASET, MASKING_PLUGIN, REPLICATION_PROFILE, ENGINE_PERFORMANCE_ANALYTIC_REPORT, ENGINE_GLOBAL_OBJECT_STATE_REPORT] |
+| **objectType** | **String**| The type of the DCT object. | [enum: ALGORITHM, ACCESS_GROUP, ACCOUNT, AUDIT_LOGS_SUMMARY_REPORT, ROLE, API_USAGE_REPORT, BOOKMARK, CDB, DATABASE_TEMPLATE, DSOURCE, ENGINE, ENVIRONMENT, MASKING_JOB, MASKING_ENVIRONMENT, MASKING_JOB_SET, REPORT_SCHEDULE, SOURCE, VAULT, VCDB, VDB, VDB_GROUP, CONNECTOR, CONNECTIVITY_CHECK, DSOURCE_USAGE_REPORT, DSOURCE_CONSUMPTION_REPORT, JOB, PRODUCT_INFO, SMTP_CONFIG, MASKING_EXECUTION_METRICS_REPORT, STORAGE_SUMMARY_REPORT, STORAGE_SAVINGS_SUMMARY_REPORT, VDB_INVENTORY_REPORT, LDAP, SAML, PASSWORD_POLICY, GLOBAL_PROPERTIES, SYSTEM, API_CLASSIFICATION, VIRTUALIZATION_POLICY, HYPERSCALE_INSTANCE, HYPERSCALE_CONNECTOR, HYPERSCALE_DATASET, MASKING_PLUGIN, REPLICATION_PROFILE, ENGINE_PERFORMANCE_ANALYTIC_REPORT, DATA_RISK_REPORT, ENGINE_GLOBAL_OBJECT_STATE_REPORT] |
 | **objectId** | **String**| The ID of the DCT Object. | |
 
 ### Return type
@@ -1400,7 +1400,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1467,7 +1467,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1534,7 +1534,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1597,7 +1597,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1666,7 +1666,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1735,7 +1735,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1804,7 +1804,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1875,7 +1875,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1944,7 +1944,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2017,7 +2017,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2090,7 +2090,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2159,7 +2159,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2230,7 +2230,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -2299,7 +2299,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

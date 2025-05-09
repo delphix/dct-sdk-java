@@ -9,7 +9,7 @@ All URIs are relative to */v3*
 
 <a id="checkSaml"></a>
 # **checkSaml**
-> checkSaml()
+> SAMLValidationResponse checkSaml()
 
 Check if SAML is enabled 
 
@@ -36,7 +36,8 @@ public class Example {
 
     SamlLoginApi apiInstance = new SamlLoginApi(defaultClient);
     try {
-      apiInstance.checkSaml();
+      SAMLValidationResponse result = apiInstance.checkSaml();
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SamlLoginApi#checkSaml");
       System.err.println("Status code: " + e.getCode());
@@ -53,11 +54,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**SAMLValidationResponse**](SAMLValidationResponse.md)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -67,6 +68,5 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | SAML is enabled |  -  |
-| **400** | SAML is not enabled |  -  |
+| **200** | OK |  -  |
 

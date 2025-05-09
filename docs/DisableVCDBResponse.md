@@ -1,6 +1,6 @@
 
 
-# DeleteAlgorithmResponse
+# DisableVCDBResponse
 
 
 ## Properties

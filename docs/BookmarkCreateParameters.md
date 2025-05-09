@@ -19,9 +19,19 @@ A Data Control Tower object that references points in time for one or more datas
 |**expiration** | **LocalDate** | The expiration for this bookmark. Mutually exclusive with retention and retain_forever. |  [optional] |
 |**retainForever** | **Boolean** | Indicates that the bookmark should be retained forever. |  [optional] |
 |**tags** | [**List&lt;Tag&gt;**](Tag.md) | The tags to be created for this Bookmark. |  [optional] |
+|**bookmarkType** | [**BookmarkTypeEnum**](#BookmarkTypeEnum) | Type of the bookmark, either PUBLIC or PRIVATE. |  [optional] |
 |**makeCurrentAccountOwner** | **Boolean** | Whether the account creating this bookmark must be configured as owner of the bookmark. |  [optional] |
 |**inheritParentVdbTags** | **Boolean** | This field has been deprecated in favour of new field &#39;inherit_parent_tags&#39;. |  [optional] |
 |**inheritParentTags** | **Boolean** | Whether this bookmark should inherit tags from the parent dataset. |  [optional] |
+
+
+
+## Enum: BookmarkTypeEnum
+
+| Name | Value |
+|---- | -----|
+| PUBLIC | &quot;PUBLIC&quot; |
+| PRIVATE | &quot;PRIVATE&quot; |
 
 
 

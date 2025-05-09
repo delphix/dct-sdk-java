@@ -5,6 +5,8 @@
 ## Enum
 
 
+* `ALGORITHM` (value: `"ALGORITHM"`)
+
 * `ACCESS_GROUP` (value: `"ACCESS_GROUP"`)
 
 * `ACCOUNT` (value: `"ACCOUNT"`)
@@ -14,6 +16,8 @@
 * `BOOKMARK` (value: `"BOOKMARK"`)
 
 * `CDB` (value: `"CDB"`)
+
+* `DATA_CLASS` (value: `"DATA_CLASS"`)
 
 * `DATABASE_TEMPLATE` (value: `"DATABASE_TEMPLATE"`)
 
@@ -30,6 +34,8 @@
 * `MASKING_JOB` (value: `"MASKING_JOB"`)
 
 * `MASKING_JOB_SET` (value: `"MASKING_JOB_SET"`)
+
+* `MASKING_FILE_UPLOAD` (value: `"MASKING_FILE_UPLOAD"`)
 
 * `REPORT_SCHEDULE` (value: `"REPORT_SCHEDULE"`)
 
@@ -70,6 +76,8 @@
 * `REPLICATION_PROFILE` (value: `"REPLICATION_PROFILE"`)
 
 * `STAGING_SOURCE` (value: `"STAGING_SOURCE"`)
+
+* `DATA_LAYOUT` (value: `"DATA_LAYOUT"`)
 
 
 

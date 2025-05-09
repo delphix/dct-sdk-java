@@ -24,6 +24,7 @@
 | KERBEROSCREDENTIAL | &quot;KerberosCredential&quot; |
 | CYBERARKVAULTCREDENTIAL | &quot;CyberArkVaultCredential&quot; |
 | HASHICORPVAULTCREDENTIAL | &quot;HashiCorpVaultCredential&quot; |
+| AZUREVAULTCREDENTIAL | &quot;AzureVaultCredential&quot; |
 
 
 

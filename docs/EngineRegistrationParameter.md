@@ -24,6 +24,7 @@ Parameters to register and authenticate an engine.
 |**unsafeSslHostnameCheck** | **Boolean** | Ignore validation of the name associated to the TLS certificate when connecting to the engine over HTTPs. Setting this value must only be done if the TLS certificate of the engine does not match the hostname, and the TLS configuration of the engine cannot be fixed. Setting this property reduces the protection against a man-in-the-middle attack for connections to this engine. This is ignored if insecure_ssl is set.  |  [optional] |
 |**truststoreFilename** | **String** | File name of a truststore which can be used to validate the TLS certificate of the engine. The truststore must be available at /etc/config/certs/&lt;truststore_filename&gt;  |  [optional] |
 |**truststorePassword** | **String** | Password to read the truststore.  |  [optional] |
+|**autoTaggingConfig** | [**AutoTaggingConfig**](AutoTaggingConfig.md) |  |  [optional] |
 |**tags** | [**List&lt;Tag&gt;**](Tag.md) | The tags to be created for this engine. |  [optional] |
 
 

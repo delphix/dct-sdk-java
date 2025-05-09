@@ -75,7 +75,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -210,7 +210,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -279,7 +279,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -320,7 +320,7 @@ public class Example {
 
     SnapshotsApi apiInstance = new SnapshotsApi(defaultClient);
     String datasetId = "dataset-123"; // String | The ID of the dSource or VDB.
-    OffsetDateTime timestamp = OffsetDateTime.parse("2021-05-01T08:51:34.148000+00:00"); // OffsetDateTime | The desired point in time.
+    OffsetDateTime timestamp = OffsetDateTime.parse("2021-05-01T08:51:34.148Z"); // OffsetDateTime | The desired point in time.
     try {
       FindByTimestampResponse result = apiInstance.findByTimestamp(datasetId, timestamp);
       System.out.println(result);
@@ -348,7 +348,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -415,7 +415,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -482,7 +482,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -549,7 +549,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -620,7 +620,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -693,7 +693,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -760,7 +760,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -829,7 +829,7 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../DCT_README#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

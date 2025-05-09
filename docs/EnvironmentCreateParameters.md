@@ -28,6 +28,9 @@
 |**hashicorpVaultUsernameKey** | **String** | Key for the username in the key-value store. |  [optional] |
 |**hashicorpVaultSecretKey** | **String** | Key for the password in the key-value store. |  [optional] |
 |**cyberarkVaultQueryString** | **String** | Query to find a credential in the CyberArk vault. |  [optional] |
+|**azureVaultName** | **String** | Azure key vault name. |  [optional] |
+|**azureVaultUsernameKey** | **String** | Azure vault key for the username in the key-value store. |  [optional] |
+|**azureVaultSecretKey** | **String** | Azure vault key for the password in the key-value store. |  [optional] |
 |**useKerberosAuthentication** | **Boolean** | Whether to use kerberos authentication. |  [optional] |
 |**useEnginePublicKey** | **Boolean** | Whether to use public key authentication. |  [optional] |
 |**nfsAddresses** | **List&lt;String&gt;** | array of ip address or hostnames |  [optional] |
@@ -41,6 +44,9 @@
 |**aseDbHashicorpVaultSecretKey** | **String** | Key for the password in the key-value store. |  [optional] |
 |**aseDbCyberarkVaultQueryString** | **String** | Query to find a credential in the CyberArk vault. |  [optional] |
 |**aseDbUseKerberosAuthentication** | **Boolean** | Whether to use kerberos authentication for ASE DB discovery. |  [optional] |
+|**aseDbAzureVaultName** | **String** | Azure key vault name. |  [optional] |
+|**aseDbAzureVaultUsernameKey** | **String** | Azure vault key for the username in the key-value store. |  [optional] |
+|**aseDbAzureVaultSecretKey** | **String** | Azure vault key for the password in the key-value store. |  [optional] |
 |**javaHome** | **String** | The path to the user managed Java Development Kit (JDK). If not specified, then the OpenJDK will be used. |  [optional] |
 |**dspKeystorePath** | **String** | DSP keystore path. |  [optional] |
 |**dspKeystorePassword** | **String** | DSP keystore password. |  [optional] |
